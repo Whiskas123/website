@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$color-salmon: #f69b92;
+$color-black: #231f20;
+$color-grey: #d1d3d4;
+
+body {
+  margin: 0;
+  background-color: #fddbd4;
+  font-family: "Helvetica", sans-serif;
+
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100vw;
+  height: 100px;
+  background-color: white;
+  position: relative; // Use relative positioning
+  font-weight: bold;
+  z-index: 10;
+
+  .navbar-left {
+    position: absolute;
+    left: 2em;
+    top: 50%;
+    transform: translateY(-50%); // Center vertically
+  }
+
+  .navbar-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); // Center both horizontally and vertically
+    button {
+      background-color: $color-black;
+
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      padding: 0.5em 2em;
+      border-radius: 5px;
+      border: 0;
+
+      &:hover {
+        background-color: #3a3939;
+      }
+
+      &.active {
+        background-color: $color-salmon;
+        color: black;
+      }
+    }
+  }
+
+  .navbar-right {
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%); // Center vertically
+    display: flex; // Use flexbox for horizontal alignment
+    align-items: center; // Align items vertically in the center
+    cursor: pointer;
+
+    .link {
+      margin-right: 1em; // Add some space between the link and the search
+    }
+
+    .search {
+      display: flex; // Ensure the search input and icon are inline
+      align-items: center; // Center the input and icon vertically
+    }
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Three columns
+    grid-template-rows: repeat(4, 1fr); // Four rows
+    width: calc(100vw - 200px);
+    height: 25vh;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    padding: 0 100px;
+    background-color: $color-black;
+    z-index: 5; // Ensure it appears above other elements
+    color: white;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+      z-index: -2;
+      pointer-events: auto;
+    }
+
+    .grid-cell {
+      color: white;
+      text-align: center;
+      align-items: center;
+      justify-content: center; // Center content horizontally
+      display: flex;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.carousel {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 100px 100px;
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+
+    &.left-arrow {
+      left: 10px;
+    }
+
+    &.right-arrow {
+      right: 10px;
+    }
+  }
+
+  .carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+      ); // Adjust the color and opacity as needed
+      z-index: 0; // Ensure the overlay is behind the text
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1em;
+  }
+}
+
+.central-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2em 15em;
+  gap: 30px;
+  height: calc(360px + 4em);
+
+  .card {
+    height: 360px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 20px 20px;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .card-head {
+      height: 60px;
+      text-transform: uppercase;
+      color: $color-black;
+      background-color: $color-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 20px 20px 0px 0px;
+      font-style: italic;
+    }
+
+    .card-body {
+      height: 300px;
+      color: #3a3939;
+      background-color: white;
+      border-radius: 0px 0px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 10px;
+
+      .link {
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color-black;
+  height: 300px;
+  width: calc(100vw - 200px);
+  padding: 0 0 50px 200px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+  .footer-left {
+    width: 50%;
+  }
+
+  .footer-right {
+    width: 50%;
+  }
+}

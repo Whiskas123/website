@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import Link from "next/link";
 import CentralMenu from "./components/centralMenu";
 import { getSortedPostsData } from "./lib/posts";
+import Newsletter from "./components/newsletter";
 
 export default function Home() {
   const allPostsData = getSortedPostsData();
@@ -11,26 +12,7 @@ export default function Home() {
     <div>
       <Carousel></Carousel>
       <CentralMenu></CentralMenu>
-      <ul>
-        {allPostsData.map(({ id, date, title, subtitle, author }) => (
-          <li key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
-            <br />
-            {id}
-            <br />
-            {date}
-            <br />
-            {Array.isArray(author)
-              ? author.map((name, index) => (
-                  <span key={index}>
-                    {index === 1 ? <strong>{name}</strong> : name}
-                    {index < author.length - 1 && ", "}
-                  </span>
-                ))
-              : author}
-          </li>
-        ))}
-      </ul>
+      <Newsletter></Newsletter>
     </div>
   );
 }

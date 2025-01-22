@@ -29,11 +29,21 @@ export default async function Seccao({ params }) {
       <ul>
         {filteredPostsData.map((post) => (
           <li key={post.id}>
-            <a href={`/posts/${post.id}`}>{post.title}</a>
-            <div className="author">By {post.author}</div>
+            <a className="section-post-title" href={`/posts/${post.id}`}>
+              {post.title}
+            </a>
+            <div className="author">
+              {Array.isArray(post.author)
+                ? post.author.join(" | ")
+                : post.author}
+            </div>
           </li>
         ))}
       </ul>
+      <div className="horizontal-line-container">
+        <div className="horizontal-line black-part"></div>
+        <div className="horizontal-line salmon-part"></div>
+      </div>
     </div>
   );
 }

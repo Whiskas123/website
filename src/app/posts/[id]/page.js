@@ -7,7 +7,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }) {
-  const postData = getPostData(params.id);
+  const resolvedParams = await params;
+  const postData = getPostData(resolvedParams.id);
 
   return (
     <div className="post-container">

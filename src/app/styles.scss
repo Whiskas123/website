@@ -204,51 +204,54 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 2em 15em;
   gap: 30px;
-  height: calc(360px + 4em);
+  margin: 4em;
+
+  a {
+    color: inherit; // Reset color styles for all links
+    text-decoration: none;
+  }
 
   .card {
-    height: 360px;
-    flex: 1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 20px 20px 20px 20px;
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    .sections {
+      color: $color-darker-salmon;
+      font-weight: bold;
     }
     .card-head {
-      height: 60px;
       text-transform: uppercase;
       color: $color-black;
-      background-color: $color-grey;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-weight: bold;
-      border-radius: 20px 20px 0px 0px;
-      font-style: italic;
+      font-size: 2.5em;
     }
 
     .card-body {
-      height: 300px;
-      color: #3a3939;
-      background-color: white;
-      border-radius: 0px 0px 20px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      padding: 10px;
+      text-wrap: balance;
+    }
+    .see-more {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1em;
+      transition: color 0.3s ease;
 
-      .link {
-        font-weight: bold;
-        cursor: pointer;
+      &:hover {
+        color: $color-darker-salmon !important;
+      }
 
-        &:hover {
-          text-decoration: underline;
-        }
+      &::after {
+        content: "→";
+        margin-left: 0.5em;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: translateX(5px);
       }
     }
   }
@@ -279,6 +282,10 @@ footer {
 
   @media (max-width: 768px) {
     width: 92%;
+  }
+
+  .section-post-title {
+    font-size: 1.2em;
   }
 
   .sections {
@@ -367,8 +374,48 @@ footer {
 
     .author {
       font-size: 0.9em;
-      color: $color-grey;
       margin-top: 0.5em;
+    }
+  }
+}
+
+.newsletter {
+  text-align: center;
+  margin: 6em 0;
+
+  h2 {
+    font-size: 2em;
+    color: $color-black;
+    margin-bottom: 1em;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    input[type="email"] {
+      padding: 0.5em;
+      font-size: 1em;
+      border: 1px solid $color-grey;
+      border-radius: 5px;
+      width: 250px;
+    }
+
+    button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background-color: $color-salmon;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-darker-salmon;
+      }
     }
   }
 }

@@ -42,28 +42,37 @@ export function getSortedPostsData() {
 
 export function getAllSections() {
   const sections = [
-    "mesa-controversia",
-    "internacional",
-    "abecedario-critico",
-    "retratos",
-    "culturas-do-trabalho",
-    "recensoes",
-    "outros-textos",
-    "a-ler-e-a-ver",
-    "consultorio",
+    { url: "mesa-controversia", title: "Mesa Controvérsia" },
+    { url: "internacional", title: "Internacional" },
+    { url: "abecedario-critico", title: "Abecedário Crítico" },
+    { url: "retratos", title: "Retratos" },
+    { url: "culturas-do-trabalho", title: "Culturas do Trabalho" },
+    { url: "recensoes", title: "Recensões" },
+    { url: "outros-textos", title: "Outros Textos" },
+    { url: "a-ler-e-a-ver", title: "A Ler e a Ver" },
+    { url: "consultorio", title: "Consultório" },
   ];
+
+  return sections.map((section) => ({
+    params: {
+      url: section.url,
+      title: section.title,
+    },
+  }));
 }
 
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ""),
-      },
-    };
-  });
+  return fileNames
+    .filter((fileName) => !fileName.startsWith("[id]")) // Ignore files in [id] folder
+    .map((fileName) => {
+      return {
+        params: {
+          id: fileName.replace(/\.md$/, ""),
+        },
+      };
+    });
 }
 
 export function getPostData(id) {

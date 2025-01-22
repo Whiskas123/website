@@ -12,13 +12,15 @@ export default function Navbar() {
   };
 
   const toggleMenu = () => {
-    setMenuVisible(!menuVisible); // Toggle menu visibility
+    setMenuVisible(!menuVisible);
   };
 
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <Image src="/logo.svg" alt="Logo" width={120} height={100} />
+        <Link href="/">
+          <Image src="/logo.svg" alt="Logo" width={120} height={100} />
+        </Link>
       </div>
       <div className="navbar-center">
         <button onClick={toggleMenu} className={menuVisible ? "active" : ""}>
@@ -26,7 +28,9 @@ export default function Navbar() {
         </button>
       </div>
       <div className="navbar-right">
-        <div className="link">Sobre nós</div>
+        <Link href="/sobre-nos" className="link">
+          Sobre nós
+        </Link>
         <div className="search">
           {searchVisible && <input type="text" placeholder="Search..." />}
           <Image
@@ -67,9 +71,6 @@ export default function Navbar() {
         </Link>
         <Link href="/consultorio" className="grid-cell">
           Consultório
-        </Link>
-        <Link href="/links" className="grid-cell">
-          Links
         </Link>
       </div>
     </div>

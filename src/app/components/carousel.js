@@ -7,10 +7,10 @@ export default function Carousel() {
   const slides = [
     {
       title: "Sabias que tens direito a uma indemnização?",
-      imageUrl: "slide1.jpg",
+      imageUrl: "/slide1.jpg",
     },
-    { title: "Slide Title 2", imageUrl: "slide2.jpg" },
-    { title: "Slide Title 3", imageUrl: "slide3.jpg" },
+    { title: "Slide Title 2", imageUrl: "/slide2.jpg" },
+    { title: "Slide Title 3", imageUrl: "/slide3.jpg" },
     // Add more slides as needed
   ];
 

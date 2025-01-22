@@ -322,4 +322,26 @@ footer {
     margin-top: 3em;
     text-wrap: pretty;
   }
+
+  .horizontal-line-container {
+    display: flex;
+    align-items: center; // Vertically center the lines
+    width: 100%;
+    margin-top: 2em; // Adjust as needed for spacing
+  }
+
+  .horizontal-line {
+    height: 5px; // Base thickness for the black part
+  }
+
+  .black-part {
+    width: 70%;
+    background-color: $color-black;
+  }
+
+  .salmon-part {
+    width: 30%;
+    height: 10px; // Thicker for the salmon part
+    background-color: $color-salmon;
+  }
 }

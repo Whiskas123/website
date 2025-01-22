@@ -41,6 +41,10 @@ export default async function Post({ params }) {
       <div className="post-content">
         <ReactMarkdown>{postData.content}</ReactMarkdown>
       </div>
+      <div class="horizontal-line-container">
+        <div class="horizontal-line black-part"></div>
+        <div class="horizontal-line salmon-part"></div>
+      </div>
     </div>
   );
 }

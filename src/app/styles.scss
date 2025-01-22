@@ -344,4 +344,31 @@ footer {
     height: 10px; // Thicker for the salmon part
     background-color: $color-salmon;
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 1em 0;
+    padding: 1em;
+
+    a {
+      color: $color-black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-darker-salmon;
+      }
+    }
+
+    .author {
+      font-size: 0.9em;
+      color: $color-grey;
+      margin-top: 0.5em;
+    }
+  }
 }

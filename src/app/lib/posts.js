@@ -40,27 +40,6 @@ export function getSortedPostsData() {
   });
 }
 
-export function getAllSections() {
-  const sections = [
-    { url: "mesa-controversia", title: "Mesa Controvérsia" },
-    { url: "internacional", title: "Internacional" },
-    { url: "abecedario-critico", title: "Abecedário Crítico" },
-    { url: "retratos", title: "Retratos" },
-    { url: "culturas-do-trabalho", title: "Culturas do Trabalho" },
-    { url: "recensoes", title: "Recensões" },
-    { url: "outros-textos", title: "Outros Textos" },
-    { url: "a-ler-e-a-ver", title: "A Ler e a Ver" },
-    { url: "consultorio", title: "Consultório" },
-  ];
-
-  return sections.map((section) => ({
-    params: {
-      url: section.url,
-      title: section.title,
-    },
-  }));
-}
-
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
 

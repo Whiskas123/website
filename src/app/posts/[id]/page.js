@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 // This function generates static params for each post
 export async function generateStaticParams() {
   const paths = getAllPostIds();
-  return paths.map((path) => ({ id: path.params.id }));
+  return paths.map((path) => ({ url: path.params.id }));
 }
 
 export default async function Post({ params }) {
@@ -41,9 +41,9 @@ export default async function Post({ params }) {
       <div className="post-content">
         <ReactMarkdown>{postData.content}</ReactMarkdown>
       </div>
-      <div class="horizontal-line-container">
-        <div class="horizontal-line black-part"></div>
-        <div class="horizontal-line salmon-part"></div>
+      <div className="horizontal-line-container">
+        <div className="horizontal-line black-part"></div>
+        <div className="horizontal-line salmon-part"></div>
       </div>
     </div>
   );

@@ -2,10 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { getAllSections } from "../lib/sections";
 
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
+  const sections = getAllSections();
 
   const toggleSearch = () => {
     setSearchVisible(!searchVisible);
@@ -13,6 +15,10 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
+  };
+
+  const handleSectionClick = () => {
+    setMenuVisible(false);
   };
 
   return (
@@ -45,33 +51,17 @@ export default function Navbar() {
       </div>
 
       <div className={`menu-grid ${menuVisible ? "visible" : ""}`}>
-        <Link href="/mesas-controversia" className="grid-cell">
-          Mesas de Controvérsia
-        </Link>
-        <Link href="/internacional" className="grid-cell">
-          Internacional
-        </Link>
-        <Link href="/abecedario-critico" className="grid-cell">
-          Abecedário crítico
-        </Link>
-        <Link href="/retratos" className="grid-cell">
-          Retratos
-        </Link>
-        <Link href="/culturas-trabalho" className="grid-cell">
-          Culturas do trabalho
-        </Link>
-        <Link href="/recensoes" className="grid-cell">
-          Recensões
-        </Link>
-        <Link href="/outros-textos" className="grid-cell">
-          Outros textos
-        </Link>
-        <Link href="/ler-e-ver" className="grid-cell">
-          A ler e a ver
-        </Link>
-        <Link href="/consultorio" className="grid-cell">
-          Consultório
-        </Link>
+        {" "}
+        {sections.map((section) => (
+          <Link
+            key={section.url}
+            href={`/seccao/${section.url}`}
+            className="grid-cell"
+            onClick={handleSectionClick}
+          >
+            {section.title}
+          </Link>
+        ))}
       </div>
     </div>
   );

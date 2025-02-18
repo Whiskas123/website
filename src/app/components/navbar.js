@@ -26,8 +26,15 @@ export default function Navbar() {
       <div className="navbar-left"></div>
       <div className="navbar-center">
         <Link href="/" className="logo-link">
-          <Image src="/logo.svg" alt="Logo" width={198} height={165} />
+          <Image
+            className="logo-img"
+            src="/logo.svg"
+            alt="Logo"
+            width={198}
+            height={165}
+          />
         </Link>
+        <div className="logo-text">REVISTA DOS MUNDOS DO TRABALHO</div>
       </div>
       <div className="navbar-right">
         <Link href="/posts/31" className="link">

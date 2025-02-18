@@ -101,12 +101,28 @@ export default function Home() {
       <div style={{ display: "flex" }}>
         <div className="left-column">
           <ul>
-            {sections.map((section, index) => (
-              <li key={index}>
-                <Link href={`/seccao/${section.url}`} className="no-decoration">
-                  {section.title}
-                </Link>
-              </li>
+            <li>
+              <strong>Temas Centrais</strong>
+              <ul>
+                {sections.slice(0, 3).map((section, index) => (
+                  <Link
+                    key={index}
+                    href={`/seccao/${section.url}`}
+                    className="no-decoration"
+                  >
+                    <li>{section.title}</li>
+                  </Link>
+                ))}
+              </ul>
+            </li>
+            {sections.slice(3).map((section, index) => (
+              <Link
+                key={index + 3}
+                href={`/seccao/${section.url}`}
+                className="no-decoration"
+              >
+                <li>{section.title}</li>
+              </Link>
             ))}
           </ul>
         </div>

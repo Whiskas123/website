@@ -1,6 +1,8 @@
 export function getAllSections() {
   const sections = [
-    { url: "temas-centrais", title: "Temas Centrais" },
+    { url: "50-aos-25-abril", title: "50 anos do 25 de Abril" },
+    { url: "salarios-ontem-hoje", title: "Salários ontem e hoje" },
+    { url: "plataformas-digitais", title: "Plataformas Digitais" },
     { url: "mesa-controversia", title: "Mesa de Controvérsia" },
     { url: "internacional", title: "Internacional" },
     { url: "abecedario-critico", title: "Abecedário Crítico" },

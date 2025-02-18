@@ -25,13 +25,12 @@ export default function Navbar() {
     <div className="navbar">
       <div className="navbar-left"></div>
       <div className="navbar-center">
-        {" "}
-        <Link href="/">
+        <Link href="/" className="logo-link">
           <Image src="/logo.svg" alt="Logo" width={120} height={100} />
         </Link>
       </div>
       <div className="navbar-right">
-        <Link href="/sobre-nos" className="link">
+        <Link href="/posts/31" className="link">
           SOBRE NÓS
         </Link>
         <div className="search">

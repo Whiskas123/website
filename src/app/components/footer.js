@@ -10,7 +10,15 @@ export default function Footer() {
         <p>
           Que Força É Essa – Associação de Estudos sobre os Mundos do Trabalho
         </p>
-        <p>mundosdotrabalho.associacao@gmail.com</p>
+        <button
+          className="contact-button"
+          onClick={() =>
+            (window.location.href =
+              "mailto:mundosdotrabalho.associacao@gmail.com")
+          }
+        >
+          Contacta-nos
+        </button>
       </div>
       <div className="footer-right">
         <p>Apoiado por:</p>

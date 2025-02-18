@@ -1,12 +1,14 @@
 "use client";
 import { useEffect } from "react";
 import Link from "next/link";
+import { useSidebar } from "./SidebarContext";
 
 import Newsletter from "./components/newsletter";
 import Grid from "./components/grid";
 import { getAllSections } from "./lib/sections";
 
-export default function Home({ sideBarVisible }) {
+export default function Home() {
+  const { sideBarVisible, setSideBarVisible } = useSidebar();
   const sections = getAllSections();
   const slides = [
     {

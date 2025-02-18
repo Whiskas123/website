@@ -281,6 +281,30 @@ footer {
 
   .section-post-title {
     font-size: 1.2em;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px; // Adjust as needed
+      width: 100%;
+      height: 3px; // Thicker underline
+      background-color: $color-darker-salmon;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out; // Ensure transition is here
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
   }
 
   .sections {

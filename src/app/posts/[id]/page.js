@@ -1,5 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Image from "next/image";
 // This function generates static params for each post
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -40,7 +42,29 @@ export default async function Post({ params }) {
           : null}
       </div>
       <div className="post-content">
-        <ReactMarkdown>{postData.content}</ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            p: ({ node, children }) => {
+              if (node.children[0].tagName === "img") {
+                const image = node.children[0];
+                return (
+                  <div className="image">
+                    <img
+                      src={image.properties.src}
+                      alt={image.properties.alt}
+                      style={{ width: "100%", height: "auto" }} // Make width match parent
+                    />
+                  </div>
+                );
+              }
+              // Return default child if it's not an image
+              return <p>{children}</p>;
+            },
+          }}
+        >
+          {postData.content}
+        </ReactMarkdown>
       </div>
       <div className="horizontal-line-container">
         <div className="horizontal-line black-part"></div>

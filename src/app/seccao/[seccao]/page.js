@@ -19,13 +19,14 @@ export default async function Seccao({ params }) {
   );
   const pageTitle = currentSection ? currentSection.title : "";
   const allPostsData = getSortedPostsData();
-  const filteredPostsData = allPostsData.filter(
-    (post) => post.section === pageTitle
-  );
+  const filteredPostsData =
+    params.seccao === "todos-os-textos"
+      ? allPostsData.sort((a, b) => a.id - b.id) // Sort by id in ascending order
+      : allPostsData.filter((post) => post.section === pageTitle);
 
   return (
     <div className="post-container">
-      <h1>{pageTitle}</h1>
+      <h1 className="section-title">{pageTitle}</h1>
       <ul>
         {filteredPostsData.map((post) => (
           <li key={post.id}>

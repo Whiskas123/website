@@ -1,7 +1,8 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getUrlByTitle } from "@/app/lib/sections";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "next/image";
+import Link from "next/link";
 // This function generates static params for each post
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -23,7 +24,9 @@ export default async function Post({ params }) {
             </span>
           ))
         ) : postData.section ? (
-          <span className="section">{postData.section.toUpperCase()}</span>
+          <Link href={`/seccao/${getUrlByTitle(postData.section)}`}>
+            <span className="section">{postData.section.toUpperCase()}</span>
+          </Link>
         ) : null}
       </div>
       <h1 className="post-title">{postData.title}</h1>

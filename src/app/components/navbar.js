@@ -2,28 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { getAllSections } from "../lib/sections";
+import Hamburger from "hamburger-react";
 
-export default function Navbar() {
+export default function Navbar({ sideBarVisible, setSideBarVisible }) {
   const [searchVisible, setSearchVisible] = useState(false);
-  const [menuVisible, setMenuVisible] = useState(false);
-  const sections = getAllSections();
 
   const toggleSearch = () => {
     setSearchVisible(!searchVisible);
   };
 
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
-
-  const handleSectionClick = () => {
-    setMenuVisible(false);
-  };
-
   return (
     <div className="navbar">
-      <div className="navbar-left"></div>
+      <div className="navbar-left">
+        <Hamburger toggled={sideBarVisible} toggle={setSideBarVisible} />
+      </div>
       <div className="navbar-center">
         <Link href="/" className="logo-link">
           <Image
@@ -50,20 +42,6 @@ export default function Navbar() {
             style={{ cursor: "pointer" }}
           />
         </div>
-      </div>
-
-      <div className={`menu-grid ${menuVisible ? "visible" : ""}`}>
-        {" "}
-        {sections.map((section) => (
-          <Link
-            key={section.url}
-            href={`/seccao/${section.url}`}
-            className="grid-cell"
-            onClick={handleSectionClick}
-          >
-            {section.title}
-          </Link>
-        ))}
       </div>
     </div>
   );

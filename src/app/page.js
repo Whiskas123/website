@@ -1,16 +1,12 @@
-import Navbar from "./components/navbar";
-import Carousel from "./components/carousel";
-import CardCarousel from "./components/cardCarousel";
-import Footer from "./components/footer";
+"use client";
+import { useEffect } from "react";
 import Link from "next/link";
-import CentralMenu from "./components/centralMenu";
-import { getSortedPostsData } from "./lib/posts";
+
 import Newsletter from "./components/newsletter";
 import Grid from "./components/grid";
 import { getAllSections } from "./lib/sections";
 
-export default function Home() {
-  const allPostsData = getSortedPostsData();
+export default function Home({ sideBarVisible }) {
   const sections = getAllSections();
   const slides = [
     {
@@ -96,13 +92,17 @@ export default function Home() {
     },
   ];
 
+  useEffect(() => {
+    console.log("sideBarVisible:", sideBarVisible);
+  }, [sideBarVisible]);
+
   return (
     <>
       <div style={{ display: "flex" }}>
-        <div className="left-column">
+        <div className={`left-column ${sideBarVisible ? "visible" : ""}`}>
           <ul>
-            <li>
-              <strong>Temas Centrais</strong>
+            <li className="temas-centrais">
+              <div>Temas Centrais</div>
               <ul>
                 {sections.slice(0, 3).map((section, index) => (
                   <Link

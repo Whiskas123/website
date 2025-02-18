@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="navbar-left"></div>
       <div className="navbar-center">
         <Link href="/" className="logo-link">
-          <Image src="/logo.svg" alt="Logo" width={120} height={100} />
+          <Image src="/logo.svg" alt="Logo" width={198} height={165} />
         </Link>
       </div>
       <div className="navbar-right">

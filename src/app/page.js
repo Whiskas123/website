@@ -110,7 +110,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <div style={{ width: "85%" }}>
+        <div className="main-column">
           {slides && <Grid gridSize="big-grid" slides={slides}></Grid>}
         </div>
       </div>

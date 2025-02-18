@@ -182,31 +182,42 @@ a {
 }
 
 footer {
-  background-color: $color-black;
-  height: 300px;
-  width: calc(100vw - 200px);
-  padding: 0 0 50px 200px;
-  color: white;
-  font-weight: bold;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-top: 5vh;
+  align-items: center;
+  padding: 1em;
+  background-color: $color-black;
+  color: white;
+  width: 100%;
 
-  .footer-left {
-    width: 50%;
+  .footer-left,
+  .footer-right {
+    flex: 1;
+    text-align: center;
   }
 
-  .footer-right {
-    width: 50%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+    .footer-left,
+    .footer-right {
+      margin-bottom: 1em;
+    }
   }
 }
 
 .post-container {
   width: 50%;
-  margin: 5em auto;
+  margin: 2em auto;
 
   @media (max-width: 768px) {
     width: 92%;
+    margin: 1em auto;
+  }
+
+  .post-title {
+    text-transform: uppercase;
   }
 
   .section-post-title {
@@ -521,7 +532,7 @@ footer {
   width: 70vw;
   margin: 0 auto;
   display: grid;
-  margin-top: 7vh;
+  margin-top: 2vh;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 20px;
@@ -619,4 +630,45 @@ footer {
 .no-decoration {
   text-decoration: none !important;
   color: $color-black; // Ensure text is readable
+}
+
+.main-column {
+  width: 85%;
+}
+
+@media (max-width: 800px) {
+  .main-column {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .left-column {
+    display: none; // Hide the sidebar on phones
+  }
+
+  .big-grid,
+  .small-grid {
+    display: block; // Change grid to block for list-like display
+    width: 100%; // Full width for list items
+    margin: 0; // Remove margins for list items
+    height: auto;
+
+    .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5,
+    .div6,
+    .div7 {
+      width: 100%; // Full width for each item
+      margin-bottom: 1em; // Add some space between items
+      display: block;
+    }
+  }
+  .navbar-right .link {
+    display: none;
+  }
+
+  .newsletter {
+    margin-top: 2em; // Add margin to separate from the grid
+  }
 }

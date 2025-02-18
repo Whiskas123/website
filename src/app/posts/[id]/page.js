@@ -26,7 +26,7 @@ export default async function Post({ params }) {
           <span className="section">{postData.section.toUpperCase()}</span>
         ) : null}
       </div>
-      <h1>{postData.title}</h1>
+      <h1 className="post-title">{postData.title}</h1>
       {postData.subtitle ? <h2>{postData.subtitle}</h2> : null}
 
       <div className="authors">

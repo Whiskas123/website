@@ -10,7 +10,6 @@ const sections = [
   { url: "culturas-do-trabalho", title: "Culturas do Trabalho" },
   { url: "a-ler-e-a-ver", title: "A Ler e a Ver" },
   { url: "consultorio", title: "Consultório" },
-  { url: "outros-textos", title: "Outros Textos" },
   { url: "todos-os-textos", title: "Todos os textos" },
 ];
 

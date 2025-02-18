@@ -35,6 +35,10 @@ body {
   min-height: 100vh;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -66,6 +70,7 @@ a {
     }
 
     @media (max-width: 768px) {
+      left: 1em;
       .hamburger-icon {
         display: block; // Show on mobile
       }
@@ -128,6 +133,9 @@ a {
     .search {
       display: flex; // Ensure the search input and icon are inline
       align-items: center; // Center the input and icon vertically
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -692,6 +700,7 @@ footer {
   background-color: #ffe5e2;
   color: $color-black; // Ensure text is readable
   z-index: 20;
+  transition: transform 0.3s ease;
 
   @media (max-width: 768px) {
     position: absolute; // Position it absolutely
@@ -699,11 +708,12 @@ footer {
     left: 0; // Align it to the left
     width: 70%; // Full width to cover the content
     height: 100%; // Full height to cover the viewport
-    display: none; // Hide by default on mobile
     z-index: 30; // Ensure it appears above other elements
+    transform: translateX(-100%); // Ensure it starts off-screen on mobile
 
     &.visible {
       display: block; // Show the sidebar on mobile if visible
+      transform: translateX(0); // Slide into view on mobile
     }
   }
 
@@ -718,6 +728,9 @@ footer {
     margin-top: 7vh;
     list-style: none; // Remove default list styling
     padding: 0;
+    @media (max-width: 768px) {
+      margin-top: 3vh;
+    }
 
     li {
       margin: 1em 0;
@@ -792,17 +805,6 @@ footer {
       }
     }
   }
-
-  &.visible {
-    display: block; // Show the sidebar when visible
-  }
-
-  @media (max-width: 768px) {
-    display: none; // Hide by default on mobile
-    &.visible {
-      display: block; // Show the sidebar on mobile if visible
-    }
-  }
 }
 
 .no-decoration {
@@ -827,9 +829,6 @@ footer {
     justify-content: center;
     position: relative; // Ensure it stays in place
     z-index: 10; // Lower z-index than the sidebar
-  }
-  .left-column {
-    display: none; // Hide the sidebar on phones
   }
 
   .big-grid,

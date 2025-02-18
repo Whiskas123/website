@@ -1,13 +1,21 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hamburger from "hamburger-react";
 import { useSidebar } from "../SidebarContext";
 
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
   const { sideBarVisible, setSideBarVisible } = useSidebar();
+
+  useEffect(() => {
+    if (sideBarVisible) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [sideBarVisible]);
 
   const toggleSearch = () => {
     setSearchVisible(!searchVisible);

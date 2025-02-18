@@ -6,11 +6,15 @@ $color-salmon: #f69b92;
 $color-black: #231f20;
 $color-grey: #d1d3d4;
 
+* {
+  max-width: 100%;
+}
+
 body {
+  overflow-x: hidden;
   margin: 0;
   background-color: #f9f3f1;
   font-family: "Barlow", sans-serif;
-
   min-height: 100vh;
 }
 
@@ -640,6 +644,7 @@ footer {
   .main-column {
     width: 92%;
     margin: 0 auto;
+    justify-content: center;
   }
   .left-column {
     display: none; // Hide the sidebar on phones
@@ -649,7 +654,7 @@ footer {
   .small-grid {
     display: block; // Change grid to block for list-like display
     width: 100%; // Full width for list items
-    margin: 0; // Remove margins for list items
+    margin: 0 auto; // Remove margins for list items
     height: auto;
 
     .div1,
@@ -666,6 +671,11 @@ footer {
   }
   .navbar-right .link {
     display: none;
+  }
+
+  .small-grid {
+    margin-top: 3vh;
+    width: 92%;
   }
 
   .newsletter {

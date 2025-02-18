@@ -34,7 +34,6 @@ export default function Navbar() {
             height={165}
           />
         </Link>
-        <div className="logo-text">REVISTA DOS MUNDOS DO TRABALHO</div>
       </div>
       <div className="navbar-right">
         <Link href="/posts/31" className="link">

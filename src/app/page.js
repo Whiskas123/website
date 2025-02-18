@@ -7,10 +7,11 @@ import CentralMenu from "./components/centralMenu";
 import { getSortedPostsData } from "./lib/posts";
 import Newsletter from "./components/newsletter";
 import Grid from "./components/grid";
+import { getAllSections } from "./lib/sections";
 
 export default function Home() {
   const allPostsData = getSortedPostsData();
-
+  const sections = getAllSections();
   const slides = [
     {
       title: "Democracia, Trabalho e Sindicalismo",
@@ -96,11 +97,25 @@ export default function Home() {
   ];
 
   return (
-    <div>
-      {slides && <Grid gridSize="big-grid" slides={slides}></Grid>}
+    <>
+      <div style={{ display: "flex" }}>
+        <div className="left-column">
+          <ul>
+            {sections.map((section, index) => (
+              <li key={index}>
+                <Link href={`/seccao/${section.url}`} className="no-decoration">
+                  {section.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div style={{ width: "85%" }}>
+          {slides && <Grid gridSize="big-grid" slides={slides}></Grid>}
+        </div>
+      </div>
       <Newsletter></Newsletter>
-
       {slidesSmall && <Grid gridSize="small-grid" slides={slidesSmall}></Grid>}
-    </div>
+    </>
   );
 }

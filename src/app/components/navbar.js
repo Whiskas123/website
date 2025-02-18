@@ -23,19 +23,16 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar-left">
+      <div className="navbar-left"></div>
+      <div className="navbar-center">
+        {" "}
         <Link href="/">
           <Image src="/logo.svg" alt="Logo" width={120} height={100} />
         </Link>
       </div>
-      <div className="navbar-center">
-        <button onClick={toggleMenu} className={menuVisible ? "active" : ""}>
-          Menu
-        </button>
-      </div>
       <div className="navbar-right">
         <Link href="/sobre-nos" className="link">
-          Sobre nós
+          SOBRE NÓS
         </Link>
         <div className="search">
           {searchVisible && <input type="text" placeholder="Search..." />}

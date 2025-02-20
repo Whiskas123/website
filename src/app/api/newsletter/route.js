@@ -25,7 +25,7 @@ export async function POST(request) {
 
     // Rate Limiting
     const ip = headersList.get("x-forwarded-for") || "unknown";
-    const rateLimitInfo = getRateLimitInfo(ip);
+    const rateLimitInfo = await getRateLimitInfo();
 
     if (rateLimitInfo.isRateLimited) {
       return new Response(

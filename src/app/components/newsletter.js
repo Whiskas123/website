@@ -61,15 +61,15 @@ export default function Newsletter() {
           {status === "sending" ? "A subscrever..." : "Subscrever"}
         </button>
       </form>
-      {status === "success" && (
+      {(status === "success" || status === "error") && (
         <div className="success-modal">
           <div className="modal-content">
-            <h3>Subcrição efectuada</h3>
+            <h3>{status === "success" ? "Subcrição efectuada" : "Erro"}</h3>
+            {status === "error" && <p className="error">{error}</p>}
             <button onClick={() => setStatus("")}>Fechar</button>
           </div>
         </div>
       )}
-      {status === "error" && <p className="error">{error}</p>}
     </div>
   );
 }

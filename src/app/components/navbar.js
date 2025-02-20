@@ -20,7 +20,6 @@ export default function Navbar() {
   function handleSearch() {
     if (!searchTerm.trim()) return; // Don't search if term is empty
     const trimmedSearch = searchTerm.trim();
-    setSearchVisible(false);
     handleSidebarClick();
     router.push(`/search?q=${encodeURIComponent(trimmedSearch)}`);
     setSearchTerm(""); // Move this after router.push
@@ -51,7 +50,14 @@ export default function Navbar() {
           )}
         </div>
         <div className="navbar-center">
-          <Link href="/" className="logo-link" onClick={handleSidebarClick}>
+          <Link
+            href="/"
+            className="logo-link"
+            onClick={() => {
+              handleSidebarClick();
+              setSearchVisible(false);
+            }}
+          >
             <Image
               className="logo-img"
               src="/logo.svg"
@@ -69,6 +75,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Pesquisar..."
+              value={searchTerm}
               className={searchVisible ? "visible" : ""}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -80,7 +87,13 @@ export default function Navbar() {
               width={20}
               height={20}
               onClick={() => {
-                toggleSearch();
+                if (!searchVisible) {
+                  toggleSearch(); // Open input if closed
+                } else if (searchTerm.trim()) {
+                  handleSearch(); // Handle search if input has terms
+                } else {
+                  toggleSearch(); // Close input if open and empty
+                }
                 handleSidebarClick();
               }}
               style={{ cursor: "pointer" }}

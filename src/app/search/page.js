@@ -13,7 +13,6 @@ export default function SearchResults() {
       try {
         const response = await fetch("/api/posts");
         const posts = await response.json();
-        console.log("Fetched posts:", posts.slice(0, 2));
         setAllPosts(posts);
       } catch (error) {
         console.error("Failed to fetch posts:", error);
@@ -62,12 +61,15 @@ export default function SearchResults() {
     });
 
   if (loading) {
-    return <div className="post-container">Loading...</div>;
+    return <div className="post-container">Carregando...</div>;
   }
 
   return (
     <div className="post-container">
-      <h1 className="section-title">Resultados da pesquisa: {query}</h1>
+      <h1 className="section-title">
+        <span style={{ color: "#231f20" }}>Resultados da pesquisa: </span>
+        {query}
+      </h1>
       {searchResults.length === 0 ? (
         <p>Nenhum resultado encontrado.</p>
       ) : (

@@ -136,13 +136,13 @@ a {
         outline: none;
         transition: width 0.3s ease, padding 0.3s ease;
         overflow: hidden;
+        width: 0px;
 
         &[type="text"] {
           font-size: 1em;
           border-bottom: 1px solid $color-black;
         }
 
-        &:not(:placeholder-shown),
         &.visible {
           width: 200px;
           padding: 5px;
@@ -922,5 +922,61 @@ footer {
 @media (min-width: 1025px) and (max-width: 1300px) {
   .post-container {
     width: 70vw;
+  }
+}
+
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+
+  .modal-content {
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 0.3s ease 0.1s forwards;
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: $color-salmon;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-darker-salmon;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

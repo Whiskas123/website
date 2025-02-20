@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 export default function SearchResults() {
@@ -65,33 +65,35 @@ export default function SearchResults() {
   }
 
   return (
-    <div className="post-container">
-      <h1 className="section-title">
-        <span style={{ color: "#231f20" }}>Resultados da pesquisa: </span>
-        {query}
-      </h1>
-      {searchResults.length === 0 ? (
-        <p>Nenhum resultado encontrado.</p>
-      ) : (
-        <ul>
-          {searchResults.map((post) => (
-            <li key={post.id}>
-              <a className="section-post-title" href={`/posts/${post.id}`}>
-                {post.title}
-              </a>
-              <div className="author">
-                {Array.isArray(post.author)
-                  ? post.author.join(" | ")
-                  : post.author}
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-      <div className="horizontal-line-container">
-        <div className="horizontal-line black-part"></div>
-        <div className="horizontal-line salmon-part"></div>
+    <Suspense fallback={<div className="post-container">Carregando...</div>}>
+      <div className="post-container">
+        <h1 className="section-title">
+          <span style={{ color: "#231f20" }}>Resultados da pesquisa: </span>
+          {query}
+        </h1>
+        {searchResults.length === 0 ? (
+          <p>Nenhum resultado encontrado.</p>
+        ) : (
+          <ul>
+            {searchResults.map((post) => (
+              <li key={post.id}>
+                <a className="section-post-title" href={`/posts/${post.id}`}>
+                  {post.title}
+                </a>
+                <div className="author">
+                  {Array.isArray(post.author)
+                    ? post.author.join(" | ")
+                    : post.author}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="horizontal-line-container">
+          <div className="horizontal-line black-part"></div>
+          <div className="horizontal-line salmon-part"></div>
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 }

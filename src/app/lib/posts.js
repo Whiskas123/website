@@ -4,7 +4,7 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "src/app/posts");
 
-export function getSortedPostsData() {
+export function getSortedPostsData(includeContent = false) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
@@ -25,6 +25,7 @@ export function getSortedPostsData() {
         return {
           id,
           ...matterResult.data,
+          content: includeContent ? matterResult.content : null,
         };
       } catch (error) {
         throw new Error(`Error parsing file ${fileName}: ${error.message}`);

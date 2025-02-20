@@ -6,13 +6,25 @@ import Hamburger from "hamburger-react";
 import { useSidebar } from "../SidebarContext";
 import { getAllSections } from "../lib/sections";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const { sideBarVisible, setSideBarVisible } = useSidebar();
   const sections = getAllSections();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const router = useRouter();
+
+  function handleSearch() {
+    if (!searchTerm.trim()) return; // Don't search if term is empty
+    const trimmedSearch = searchTerm.trim();
+    setSearchVisible(false);
+    handleSidebarClick();
+    router.push(`/search?q=${encodeURIComponent(trimmedSearch)}`);
+    setSearchTerm(""); // Move this after router.push
+  }
 
   useEffect(() => {
     if (sideBarVisible) {
@@ -54,7 +66,14 @@ export default function Navbar() {
             SOBRE NÓS
           </Link>
           <div className="search">
-            {searchVisible && <input type="text" placeholder="Search..." />}
+            <input
+              type="text"
+              placeholder="Pesquisar..."
+              className={searchVisible ? "visible" : ""}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+            />
+
             <Image
               src="/magnifying-glass.svg"
               alt="Search"

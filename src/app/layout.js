@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
       <body>
         <SidebarProvider>
           <Navbar />
+          <div style={{ height: "150px" }}></div>
           {children}
           <Footer />
         </SidebarProvider>

@@ -101,7 +101,11 @@ export default function Home() {
   return (
     <>
       <div style={{ display: "flex" }}>
-        <div className={`left-column ${sideBarVisible ? "visible" : ""}`}>
+        <div
+          className={`left-column side-bar-wrapper ${
+            sideBarVisible ? "visible" : ""
+          }`}
+        >
           <ul>
             <li className="temas-centrais">
               <div>Temas Centrais</div>

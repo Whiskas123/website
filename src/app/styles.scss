@@ -1019,7 +1019,7 @@ footer {
   transform: translateX(-100%); // Ensure it starts off-screen on mobile
 
   @media (max-width: 768px) {
-    min-width: 0;
+    min-width: 80%;
   }
 
   &.visible {

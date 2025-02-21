@@ -6,9 +6,7 @@ const sections = [
   { url: "mesa-controversia", title: "Mesa de Controvérsia" },
   { url: "internacional", title: "Internacional" },
   { url: "abecedario-critico", title: "Abecedário Crítico" },
-  { url: "retratos", title: "Retratos" },
   { url: "culturas-do-trabalho", title: "Culturas do Trabalho" },
-  { url: "a-ler-e-a-ver", title: "A Ler e a Ver" },
   { url: "consultorio-juridico", title: "Consultório Jurídico" },
   { url: "todos-os-textos", title: "Todos os textos" },
 ];

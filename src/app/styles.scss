@@ -767,6 +767,8 @@ footer {
 }
 
 .side-bar-wrapper {
+  overflow-y: scroll;
+
   .mobile-sidebar-bottom {
     display: none; // Hidden by default
 

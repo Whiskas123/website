@@ -11,11 +11,28 @@ import { useRouter } from "next/navigation";
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
   const { sideBarVisible, setSideBarVisible } = useSidebar();
   const sections = getAllSections();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const router = useRouter();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   function handleSearch() {
     if (!searchTerm.trim()) return; // Don't search if term is empty
@@ -57,22 +74,15 @@ export default function Navbar() {
             }}
           >
             <Image
-              className="logo-img"
-              src="/logo.svg"
+              className={`logo-img ${!isMobile ? "homepage-logo" : ""}`}
+              src={!isMobile ? "/logo_horizontal.svg" : "/logo.svg"}
               alt="Logo"
-              width={198}
-              height={165}
+              width={!isMobile ? 1226.91 : 198}
+              height={!isMobile ? 198.43 : 165}
             />
           </Link>
         </div>
         <div className="navbar-right">
-          <Link
-            href="/pdf/revista.pdf"
-            className="link"
-            onClick={handleSidebarClick}
-          >
-            REVISTA EM PDF
-          </Link>
           <Link href="/posts/31" className="link" onClick={handleSidebarClick}>
             SOBRE NÓS
           </Link>
@@ -142,23 +152,28 @@ export default function Navbar() {
                 <li>{section.title}</li>
               </Link>
             ))}
-          </ul>
-          <div className="mobile-sidebar-bottom">
-            <div className="horizontal-separator"></div>
+            <div
+              className="horizontal-separator"
+              style={{ marginRight: "20px" }}
+            ></div>
             <Link
+              style={{ color: "black" }}
+              href="/pdf/revista.pdf"
+              className="link"
+            >
+              <li>REVISTA EM PDF</li>
+            </Link>
+            <Link
+              style={{ color: "black" }}
               href="/posts/31"
               className="mobile-sobre-nos"
               onClick={handleSidebarClick}
             >
-              SOBRE NÓS
+              <li>SOBRE NÓS</li>
             </Link>
-            <Link
-              href="/pdf/revista.pdf"
-              className="mobile-sobre-nos"
-              onClick={handleSidebarClick}
-            >
-              REVISTA EM PDF
-            </Link>
+          </ul>
+
+          <div className="mobile-sidebar-bottom">
             <div className="mobile-search">
               <input
                 type="text"

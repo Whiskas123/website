@@ -130,6 +130,24 @@ export default function Home() {
                 <li>{section.title}</li>
               </Link>
             ))}
+            <div
+              className="horizontal-separator"
+              style={{ marginRight: "20px" }}
+            ></div>
+            <Link
+              style={{ color: "black" }}
+              href="/pdf/revista.pdf"
+              className="link"
+            >
+              <li>REVISTA EM PDF</li>
+            </Link>
+            <Link
+              style={{ color: "black" }}
+              href="/posts/31"
+              className="mobile-sobre-nos"
+            >
+              <li>SOBRE NÓS</li>
+            </Link>
           </ul>
         </div>
         <div className="main-column">

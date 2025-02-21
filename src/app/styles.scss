@@ -53,14 +53,6 @@ a {
   top: 0;
   font-weight: bold;
 
-  a {
-    color: $color-black;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
   .navbar-left {
     position: absolute;
     left: 2em;
@@ -122,7 +114,34 @@ a {
     font-size: 1.2em;
 
     .link {
+      color: $color-black;
+      transition: color 0.3s ease;
+      cursor: pointer;
       margin-right: 1em; // Add some space between the link and the search
+      display: inline-block; // Add this to contain the underline
+      position: relative;
+
+      &:hover {
+        color: $color-darker-salmon; // Different hover color for nested items
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px; // Adjust as needed
+        width: 100%;
+        height: 3px; // Thicker underline
+        background-color: $color-darker-salmon;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out; // Ensure transition is here
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
     }
 
     .search {

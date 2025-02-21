@@ -56,12 +56,16 @@ export default async function Post({ params }) {
                     <img
                       src={image.properties.src}
                       alt={image.properties.alt}
-                      style={{ width: "100%", height: "auto" }} // Make width match parent
+                      style={{ width: "100%", height: "auto" }}
                     />
+                    {image.properties.alt && (
+                      <div className="image-caption">
+                        {image.properties.alt}
+                      </div>
+                    )}
                   </div>
                 );
               }
-              // Return default child if it's not an image
               return <p>{children}</p>;
             },
           }}

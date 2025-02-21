@@ -83,9 +83,6 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="navbar-right">
-          <Link href="/posts/31" className="link" onClick={handleSidebarClick}>
-            SOBRE NÓS
-          </Link>
           <div className="search">
             <input
               type="text"

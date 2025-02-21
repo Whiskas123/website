@@ -44,10 +44,8 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar">
-        <div className="navbar-left">
-          {!isHomePage && (
-            <Hamburger toggled={sideBarVisible} toggle={setSideBarVisible} />
-          )}
+        <div className={`navbar-left ${isHomePage ? "desktop-hide" : ""}`}>
+          <Hamburger toggled={sideBarVisible} toggle={setSideBarVisible} />
         </div>
         <div className="navbar-center">
           <Link
@@ -68,6 +66,13 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="navbar-right">
+          <Link
+            href="/pdf/revista.pdf"
+            className="link"
+            onClick={handleSidebarClick}
+          >
+            REVISTA EM PDF
+          </Link>
           <Link href="/posts/31" className="link" onClick={handleSidebarClick}>
             SOBRE NÓS
           </Link>
@@ -138,6 +143,49 @@ export default function Navbar() {
               </Link>
             ))}
           </ul>
+          <div className="mobile-sidebar-bottom">
+            <div className="horizontal-separator"></div>
+            <Link
+              href="/posts/31"
+              className="mobile-sobre-nos"
+              onClick={handleSidebarClick}
+            >
+              SOBRE NÓS
+            </Link>
+            <Link
+              href="/pdf/revista.pdf"
+              className="mobile-sobre-nos"
+              onClick={handleSidebarClick}
+            >
+              REVISTA EM PDF
+            </Link>
+            <div className="mobile-search">
+              <input
+                type="text"
+                placeholder="Pesquisar..."
+                value={searchTerm}
+                className={searchVisible ? "visible" : ""}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+              />
+              <Image
+                src="/magnifying-glass.svg"
+                alt="Search"
+                width={20}
+                height={20}
+                onClick={() => {
+                  if (!searchVisible) {
+                    toggleSearch(); // Open input if closed
+                  } else if (searchTerm.trim()) {
+                    handleSearch(); // Handle search if input has terms
+                  } else {
+                    toggleSearch(); // Close input if open and empty
+                  }
+                }}
+                style={{ cursor: "pointer" }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

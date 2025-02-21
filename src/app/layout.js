@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body>
         <SidebarProvider>
           <Navbar />
-          <div style={{ height: "150px" }}></div>
+          <div className="spacer"></div>
           {children}
           <Footer />
         </SidebarProvider>

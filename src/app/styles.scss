@@ -22,6 +22,8 @@ $color-darker-salmon: #f33f2e;
 $color-salmon: #f69b92;
 $color-black: #231f20;
 $color-grey: #d1d3d4;
+$navbar-height: 100px;
+$navbar-height-mobile: 120px;
 
 * {
   max-width: 100%;
@@ -43,16 +45,38 @@ a {
   text-decoration: none;
 }
 
+.spacer {
+  height: $navbar-height;
+
+  @media (max-width: 768px) {
+    height: calc(#{$navbar-height-mobile} + 20px);
+  }
+}
 .navbar {
   z-index: 15;
   width: 100vw;
-  height: 150px;
+  height: $navbar-height;
   box-shadow: 1px 0px 5px #333; // Small bottom shadow
 
   background-color: white;
   position: fixed;
   top: 0;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    height: $navbar-height-mobile;
+  }
+
+  .navbar-left.desktop-hide {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    /* Adjust the max-width as needed for your mobile breakpoint */
+    .navbar-left.desktop-hide {
+      display: block;
+    }
+  }
 
   .navbar-left {
     position: absolute;
@@ -110,9 +134,14 @@ a {
     top: 50%;
     transform: translateY(-50%); // Center vertically
     display: flex; // Use flexbox for horizontal alignment
+    gap: 10px;
     align-items: center; // Align items vertically in the center
     cursor: pointer;
     font-size: 1.2em;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     .link {
       color: $color-black;
@@ -160,17 +189,17 @@ a {
 
         &[type="text"] {
           font-size: 1em;
-          border-bottom: 1px solid $color-black;
+          border-bottom: 2px solid $color-salmon; // Default color when not focused
+
+          &:focus {
+            border-bottom-color: $color-darker-salmon; // Color when focused
+          }
         }
 
         &.visible {
           width: 200px;
           padding: 5px;
         }
-      }
-
-      @media (max-width: 768px) {
-        display: none;
       }
     }
   }
@@ -393,7 +422,8 @@ footer {
   }
 
   .authors {
-    margin-top: 1em;
+    margin-top: 0em;
+    margin-bottom: 2em;
     font-size: 1.3em;
   }
 
@@ -401,8 +431,11 @@ footer {
     font-family: "Noto Serif";
     font-size: 1.2em;
     line-height: 1.7em;
-    margin-top: 3em;
     text-wrap: pretty;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   ul {
@@ -734,6 +767,65 @@ footer {
 }
 
 .side-bar-wrapper {
+  .mobile-sidebar-bottom {
+    display: none; // Hidden by default
+
+    @media (max-width: 768px) {
+      display: block;
+      margin-top: 1em;
+      padding-right: 20px;
+
+      .horizontal-separator {
+        height: 2px;
+        background-color: $color-darker-salmon;
+        margin-bottom: 1em;
+      }
+
+      .mobile-sobre-nos {
+        display: block;
+        color: $color-black;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 1em 0;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color-darker-salmon;
+        }
+      }
+
+      .mobile-search {
+        display: flex; // Ensure the search input and icon are inline
+        align-items: center; // Center the input and icon vertically
+
+        input {
+          width: 0;
+          padding: 0;
+          border: none;
+          outline: none;
+          transition: width 0.3s ease, padding 0.3s ease;
+          overflow: hidden;
+          width: 0px;
+          background-color: #ffe5e2;
+
+          &[type="text"] {
+            font-size: 1em;
+            border-bottom: 2px solid $color-salmon; // Default color when not focused
+
+            &:focus {
+              border-bottom-color: $color-darker-salmon; // Color when focused
+            }
+          }
+
+          &.visible {
+            width: 90%;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
   .temas-centrais {
     padding-right: 0 !important;
     li {
@@ -828,11 +920,15 @@ footer {
   width: 100%;
   height: 100%;
   position: fixed; // Position it absolutely
-  top: 150px; // Align it to the top
+  top: $navbar-height; // Align it to the top
   left: 0; // Align it to the left
   z-index: 30;
   background-color: transparent;
   transition: background-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    top: $navbar-height-mobile;
+  }
 
   &.visible {
     background-color: #3a3939a5;

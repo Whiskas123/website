@@ -19,13 +19,13 @@ export default function Home() {
       id: "1",
     },
     {
-      title:
-        "Como tem evoluído a fatia do bolo que é recebida pelos trabalhadores em Portugal?",
-      author: "Vicente Ferreira",
-      section: "Salários ontem e hoje",
-      imageUrl: "/images/1_AM.jpg",
-      id: "6",
+      title: "O Movimento Sindical na Construção da Democracia",
+      section: "50 anos do 25 de abril",
+      author: "Manuel Carvalho da Silva",
+      imageUrl: "/images/6_PM.jpg",
+      id: "2",
     },
+
     {
       title:
         "Entrevista com Leïla Chaibi sobre a diretiva europeia do trabalho em plataformas",
@@ -43,10 +43,23 @@ export default function Home() {
       id: "3",
     },
     {
-      title: "O Movimento Sindical na Construção da Democracia",
-      section: "50 anos do 25 de abril",
-      author: "Manuel Carvalho da Silva",
-      id: "2",
+      title:
+        "Entrevista com Alain Supiot: O trabalho uberizado traz de volta a estrutura da servidão",
+      author: "António Monteiro Fernandes",
+      section: "Internacional",
+      id: "18",
+      imageUrl: "/images/alain_supiot.png",
+    },
+  ];
+
+  const slidesMedium = [
+    {
+      title:
+        "Como tem evoluído a fatia do bolo que é recebida pelos trabalhadores em Portugal?",
+      author: "Vicente Ferreira",
+      section: "Salários ontem e hoje",
+      imageUrl: "/images/1_AM.jpg",
+      id: "6",
     },
     {
       title:
@@ -54,17 +67,27 @@ export default function Home() {
       author: "Maria da Paz Campos Lima",
       id: "7",
       section: "Salários ontem e hoje",
+      imageUrl: "/images/19_PM.jpg",
+    },
+    {
+      title:
+        "Novo art. 12.º-A do CT e a Diretiva Europeia relativa à melhoria das condições de trabalho nas plataformas digitais",
+      author: "João Leal Amado | Teresa Coelho Moreira",
+      section: "Plataformas Digitais",
+      id: "9",
+      imageUrl: "/images/estafetas.jpeg",
+    },
+    {
+      title:
+        "As lutas que se estão a (re)fazer e os novos perfis de ação em Portugal",
+      author: "Isabel Roque",
+      section: "50 anos do 25 de Abril",
+      id: "5",
+      imageUrl: "/images/2_PM.jpg",
     },
   ];
 
   const slidesSmall = [
-    {
-      title:
-        "Entrevista com Alain Supiot: O trabalho uberizado traz de volta a estrutura da servidão",
-      author: "António Monteiro Fernandes",
-      section: "Internacional",
-      id: "18",
-    },
     {
       title:
         "Como a luta contra as alterações climáticas se articula com as lutas sindicais",
@@ -87,10 +110,38 @@ export default function Home() {
       id: "23",
     },
     {
-      title: "Duques do Precariado, os nobres da precariedade",
-      author: "Maria Eduarda Pereira",
-      section: "Culturas do Trabalho",
-      id: "26",
+      title:
+        "A Agenda do Trabalho Digno e o regime de caducidade das convenções coletivas e de arbitragem",
+      author:
+        "Maria da Paz Campos Lima | João Reis | Fátima Messias | Soraia Duarte",
+      section: "Mesa de Controvérsia",
+      id: "14",
+    },
+    {
+      title:
+        "O DIREITO DOS SINDICATOS AO RELATÓRIO ÚNICO, COM DADOS RETRIBUTIVOS DE TRABALHADORES NÃO FILIADOS",
+      author: "João Zenha Martins",
+      section: "Consultório Jurídico",
+      id: "13",
+    },
+    {
+      title:
+        "Notícias de jurisprudência laboral, a propósito de três acórdãos do primeiro semestre de 2024",
+      author: "Viriato Reis",
+      section: "Consultório Jurídico",
+      id: "11",
+    },
+    {
+      title: "Exploração",
+      author: "Nuno Teles",
+      section: "Abecedário Crítico",
+      id: "16",
+    },
+    {
+      title: "Outsourcing",
+      author: "Milena Rouxinol",
+      section: "Abecedário Crítico",
+      id: "17",
     },
   ];
 
@@ -155,6 +206,9 @@ export default function Home() {
         </div>
       </div>
       <Newsletter></Newsletter>
+      {slidesMedium && (
+        <Grid gridSize="medium-grid" slides={slidesMedium}></Grid>
+      )}
       {slidesSmall && <Grid gridSize="small-grid" slides={slidesSmall}></Grid>}
     </>
   );

@@ -94,6 +94,11 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); // Center both horizontally and vertically
+    text-align: center; // Add this to center the text
+    display: flex; // Add this to enable flex layout
+    flex-direction: column; // Stack items vertically
+    align-items: center; // Center items horizontally
+    font-size: 1.3em;
 
     .logo-link {
       display: flex;
@@ -437,6 +442,35 @@ footer {
     font-size: 1.2em;
     line-height: 1.7em;
     text-wrap: pretty;
+
+    .image {
+      text-align: center;
+      margin: 2em 0;
+
+      div {
+        display: inline-block;
+        text-align: right; // Align caption to the right within the container
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 550px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .image-caption {
+        display: inline-block; // Make caption match image width
+        width: auto; // Let caption width be determined by its container
+        max-width: 100%; // Ensure caption doesn't overflow
+        text-align: right;
+        color: #666;
+        font-size: 0.7rem;
+        margin-top: 0.5em;
+        font-style: italic;
+      }
+    }
 
     li {
       margin: 0;
@@ -1164,11 +1198,4 @@ footer {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.image-caption {
-  text-align: right;
-  color: #666;
-  font-size: 0.7rem;
-  margin-top: 0;
 }

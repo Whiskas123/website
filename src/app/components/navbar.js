@@ -81,6 +81,7 @@ export default function Navbar() {
               height={!isMobile ? 198.43 : 165}
             />
           </Link>
+          {isMobile ? "" : "REVISTA DOS MUNDOS DO TRABALHO"}
         </div>
         <div className="navbar-right">
           <div className="search">

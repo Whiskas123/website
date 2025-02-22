@@ -56,7 +56,6 @@ export default async function Post({ params }) {
                     <img
                       src={image.properties.src}
                       alt={image.properties.alt}
-                      style={{ width: "100%", height: "auto" }}
                     />
                     {image.properties.alt && (
                       <div className="image-caption">

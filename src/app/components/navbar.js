@@ -156,7 +156,7 @@ export default function Navbar() {
             ></div>
             <Link
               style={{ color: "black" }}
-              href="/pdf/revista.pdf"
+              href="/pdf/revista-compressed.pdf"
               className="link"
             >
               <li>REVISTA EM PDF</li>

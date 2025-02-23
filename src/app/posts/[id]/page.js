@@ -4,7 +4,28 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import Image from "next/image";
-// This function generates static params for each post
+
+function getFirstImageUrl(content) {
+  const imageRegex = /!\[.*?\]\((.*?)\)/;
+  const match = content.match(imageRegex);
+  return match ? match[1] : null;
+}
+
+export async function generateMetadata({ params }) {
+  const postData = getPostData(params.id);
+  const firstImageUrl = getFirstImageUrl(postData.content);
+
+  return {
+    title: `${postData.title} - Que Força é Essa`,
+    description: "Revista dos Mundos do Trabalho",
+    openGraph: firstImageUrl
+      ? {
+          images: [firstImageUrl],
+        }
+      : undefined,
+  };
+}
+
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths.map((path) => ({ url: path.params.id }));

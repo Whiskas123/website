@@ -25,8 +25,8 @@ export default function Footer() {
         <Image
           src="/rosa_lux.png"
           alt="Rosa Lux"
-          width={200}
-          height={300}
+          width={150} // Reduced from 200
+          height={225} // Reduced from 300 (maintaining aspect ratio)
           layout="intrinsic"
         />
       </div>

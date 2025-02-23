@@ -313,8 +313,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 4em 1em;
+  align-items: start;
+  padding: 2em 2em; // Reduced padding
   background-color: $color-black;
   color: white;
   width: 100%;
@@ -322,36 +322,45 @@ footer {
   .footer-left,
   .footer-right {
     flex: 1;
-    text-align: center;
+    text-align: start;
+    font-size: 0.9em; // Slightly smaller text
+
+    p {
+      margin: 0.5em 0; // Reduced margins
+    }
   }
 
   .contact-button {
-    background-color: $color-salmon;
+    background-color: transparent; // More elegant button style
     color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
+    border: 1px solid $color-salmon; // Added border
+    padding: 0.4em 1em; // Slightly smaller padding
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    margin-top: 0.5em; // Added some space above button
 
     &:hover {
-      background-color: $color-darker-salmon;
+      background-color: $color-salmon;
+      transform: translateY(-1px); // Subtle lift effect
     }
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 1.5em 1em; // Even smaller padding on mobile
+
     .footer-left,
     .footer-right {
-      margin-bottom: 1em;
+      margin-bottom: 0.8em;
     }
   }
 }
-
 .post-container {
   width: 50%;
   margin: 2em auto;
+  min-height: 60vh;
 
   @media (max-width: 768px) {
     width: 92%;

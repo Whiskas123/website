@@ -452,14 +452,6 @@ footer {
         text-align: right; // Align caption to the right within the container
       }
 
-      img {
-        max-width: 100%;
-        max-height: 550px;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-      }
-
       .image-caption {
         display: inline-block; // Make caption match image width
         width: auto; // Let caption width be determined by its container

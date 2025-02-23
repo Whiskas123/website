@@ -3,6 +3,7 @@ import { getUrlByTitle } from "@/app/lib/sections";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import Image from "next/image";
 // This function generates static params for each post
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -53,9 +54,18 @@ export default async function Post({ params }) {
                 const image = node.children[0];
                 return (
                   <div className="image">
-                    <img
+                    <Image
                       src={image.properties.src}
                       alt={image.properties.alt}
+                      width={1200}
+                      height={675}
+                      style={{
+                        maxWidth: "100%",
+                        height: "auto",
+                        maxHeight: "550px",
+                        objectFit: "contain",
+                      }}
+                      priority={false}
                     />
                     {image.properties.alt && (
                       <div className="image-caption">

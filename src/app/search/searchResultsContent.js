@@ -1,6 +1,22 @@
-"use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+
+export async function generateMetadata({ searchParams }) {
+  const query = searchParams.q || "";
+
+  return {
+    title: query
+      ? `Pesquisa: ${query} - Que Força é Essa`
+      : "Pesquisa - Que Força é Essa",
+    description: "Revista sobre os Mundos do Trabalho",
+    openGraph: {
+      title: query
+        ? `Pesquisa: ${query} - Que Força é Essa`
+        : "Pesquisa - Que Força é Essa",
+      description: "Revista sobre os Mundos do Trabalho",
+    },
+  };
+}
 
 export default function SearchResultsContent() {
   const searchParams = useSearchParams();

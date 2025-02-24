@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${postData.title} - Que Força é Essa`,
-    description: "Revista dos Mundos do Trabalho",
+    description: "Revista sobre os Mundos do Trabalho",
     openGraph: firstImageUrl
       ? {
           images: [firstImageUrl],
@@ -97,6 +97,17 @@ export default async function Post({ params }) {
                 );
               }
               return <p>{children}</p>;
+            },
+            section: ({ node, children }) => {
+              if (node.children?.[0]?.children?.[0]?.value === "Footnotes") {
+                return (
+                  <section>
+                    <h2>Notas</h2>
+                    {children.slice(1)}
+                  </section>
+                );
+              }
+              return <section>{children}</section>;
             },
           }}
         >

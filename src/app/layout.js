@@ -4,7 +4,7 @@ import styles from "./styles.scss";
 import { SidebarProvider } from "./SidebarContext";
 
 export const metadata = {
-  title: "Que Força É Essa - Revista dos Mundos do Trabalho",
+  title: "Que Força É Essa - Revista sobre os Mundos do Trabalho",
   openGraph: {
     images: "/logo.svg",
   },

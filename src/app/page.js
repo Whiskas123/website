@@ -187,7 +187,7 @@ export default function Home() {
             ></div>
             <Link
               style={{ color: "black" }}
-              href="/pdf/revista-compressed.pdf"
+              href="/pdf/revista_compressed.pdf"
               className="link"
             >
               <li>REVISTA EM PDF</li>

@@ -524,6 +524,21 @@ footer {
   background-color: #f75647;
   padding: 10vh;
 
+  .subscribe-button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: $color-salmon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-darker-salmon;
+    }
+  }
+
   h2 {
     font-size: 2em;
 

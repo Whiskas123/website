@@ -1,6 +1,5 @@
-import { promises as fs } from "fs";
-import path from "path";
 import { headers } from "next/headers";
+import { kv } from "@vercel/kv";
 import { getRateLimitInfo, incrementRateLimit } from "../middleware/rateLimit";
 
 // Email validation regex
@@ -9,7 +8,7 @@ const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 export async function POST(request) {
   try {
     // Get headers
-    const headersList = await headers();
+    const headersList = headers();
 
     // CSRF Protection - Check Origin against Host
     const origin = headersList.get("origin");
@@ -60,42 +59,31 @@ export async function POST(request) {
       });
     }
 
+    // Check if email already exists in KV store
+    const existingEmail = await kv.hexists("newsletter-emails", email);
+
+    if (existingEmail) {
+      return new Response(
+        JSON.stringify({
+          error: "Email already subscribed",
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
     // Increment rate limit counter
     incrementRateLimit(rateLimitInfo.tokenKey);
 
-    // Get the path to the data directory
-    const dataDir = path.join(process.cwd(), "data");
-    const filePath = path.join(dataDir, "newsletter-emails.txt");
-
-    // Create the data directory if it doesn't exist
-    try {
-      await fs.access(dataDir);
-    } catch {
-      await fs.mkdir(dataDir);
-    }
-
-    // Check if email already exists
-    try {
-      const existingEmails = await fs.readFile(filePath, "utf8");
-      if (existingEmails.includes(email)) {
-        return new Response(
-          JSON.stringify({
-            error: "Email already subscribed",
-          }),
-          {
-            status: 400,
-            headers: { "Content-Type": "application/json" },
-          }
-        );
-      }
-    } catch (error) {
-      // File doesn't exist yet, continue
-    }
-
-    // Append the email to the file
+    // Save email to Vercel KV with timestamp
     const timestamp = new Date().toISOString();
-    await fs.appendFile(filePath, `${timestamp}: ${email}\n`);
+    await kv.hset("newsletter-emails", {
+      [email]: timestamp,
+    });
 
+    // Return success response
     return new Response(
       JSON.stringify({
         success: true,

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.2",
     "next": "15.1.4",

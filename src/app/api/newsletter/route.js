@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { kv } from "@vercel/kv";
+import { get, update } from "@vercel/edge-config";
 import { getRateLimitInfo, incrementRateLimit } from "../middleware/rateLimit";
 
 // Email validation regex
@@ -59,10 +59,10 @@ export async function POST(request) {
       });
     }
 
-    // Check if email already exists in KV store
-    const existingEmail = await kv.hexists("newsletter-emails", email);
+    // Check if email already exists in Edge Config
+    let newsletterEmails = (await get("newsletterEmails")) || {};
 
-    if (existingEmail) {
+    if (newsletterEmails[email]) {
       return new Response(
         JSON.stringify({
           error: "Email already subscribed",
@@ -77,10 +77,13 @@ export async function POST(request) {
     // Increment rate limit counter
     incrementRateLimit(rateLimitInfo.tokenKey);
 
-    // Save email to Vercel KV with timestamp
+    // Save email to Edge Config with timestamp
     const timestamp = new Date().toISOString();
-    await kv.hset("newsletter-emails", {
-      [email]: timestamp,
+    newsletterEmails[email] = timestamp;
+
+    // Update Edge Config with new email
+    await update({
+      newsletterEmails: newsletterEmails,
     });
 
     // Return success response

@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { get, update } from "@vercel/edge-config";
+import { get, set } from "@vercel/edge-config";
 import { getRateLimitInfo, incrementRateLimit } from "../middleware/rateLimit";
 
 // Email validation regex
@@ -82,9 +82,7 @@ export async function POST(request) {
     newsletterEmails[email] = timestamp;
 
     // Update Edge Config with new email
-    await update({
-      newsletterEmails: newsletterEmails,
-    });
+    await set("newsletterEmails", newsletterEmails);
 
     // Return success response
     return new Response(

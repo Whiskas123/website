@@ -12,12 +12,14 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "Democracia, Trabalho e Sindicalismo",
-      author: "Fernando Rosas",
-      section: "50 anos do 25 de Abril",
-      imageUrl: "/images/22_PM.jpg",
-      id: "1",
+      title:
+        "Política salarial e negociação coletiva em três setores: têxteis, energia e nos médicos",
+      author: "Maria da Paz Campos Lima",
+      id: "7",
+      section: "Salários ontem e hoje",
+      imageUrl: "/images/19_PM.jpg",
     },
+
     {
       title: "O Movimento Sindical na Construção da Democracia",
       section: "50 anos do 25 de abril",
@@ -25,14 +27,13 @@ export default function Home() {
       imageUrl: "/images/6_PM.jpg",
       id: "2",
     },
-
     {
       title:
-        "Entrevista com Leïla Chaibi sobre a diretiva europeia do trabalho em plataformas",
-      author: "Entrevista por José Soeiro",
+        "Novo art. 12.º-A do CT e a Diretiva Europeia relativa à melhoria das condições de trabalho nas plataformas digitais",
+      author: "João Leal Amado | Teresa Coelho Moreira",
       section: "Plataformas Digitais",
-      imageUrl: "/images/chaibi_1.jpeg",
-      id: "10",
+      id: "9",
+      imageUrl: "/images/estafetas.jpeg",
     },
     {
       title:
@@ -62,21 +63,22 @@ export default function Home() {
       id: "6",
     },
     {
-      title:
-        "Política salarial e negociação coletiva em três setores: têxteis, energia e nos médicos",
-      author: "Maria da Paz Campos Lima",
-      id: "7",
-      section: "Salários ontem e hoje",
-      imageUrl: "/images/19_PM.jpg",
+      title: "Democracia, Trabalho e Sindicalismo",
+      author: "Fernando Rosas",
+      section: "50 anos do 25 de Abril",
+      imageUrl: "/images/22_PM.jpg",
+      id: "1",
     },
+
     {
       title:
-        "Novo art. 12.º-A do CT e a Diretiva Europeia relativa à melhoria das condições de trabalho nas plataformas digitais",
-      author: "João Leal Amado | Teresa Coelho Moreira",
+        "Entrevista com Leïla Chaibi sobre a diretiva europeia do trabalho em plataformas",
+      author: "Entrevista por José Soeiro",
       section: "Plataformas Digitais",
-      id: "9",
-      imageUrl: "/images/estafetas.jpeg",
+      imageUrl: "/images/chaibi_1.jpeg",
+      id: "10",
     },
+
     {
       title:
         "As lutas que se estão a (re)fazer e os novos perfis de ação em Portugal",

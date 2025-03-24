@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import styles from "./styles.scss";
 import { SidebarProvider } from "./SidebarContext";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Que Força É Essa - Revista sobre os Mundos do Trabalho",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </SidebarProvider>
+        <Analytics />
       </body>
     </html>
   );

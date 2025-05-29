@@ -163,6 +163,14 @@ export default function Navbar() {
             </Link>
             <Link
               style={{ color: "black" }}
+              href="/posts/32"
+              className="mobile-sobre-nos"
+              onClick={handleSidebarClick}
+            >
+              <li>REVISTA EM FORMATO FÍSICO</li>
+            </Link>
+            <Link
+              style={{ color: "black" }}
               href="/posts/31"
               className="mobile-sobre-nos"
               onClick={handleSidebarClick}

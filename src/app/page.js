@@ -196,6 +196,13 @@ export default function Home() {
             </Link>
             <Link
               style={{ color: "black" }}
+              href="/posts/32"
+              className="mobile-sobre-nos"
+            >
+              <li>REVISTA EM FORMATO FÍSICO</li>
+            </Link>
+            <Link
+              style={{ color: "black" }}
               href="/posts/31"
               className="mobile-sobre-nos"
             >

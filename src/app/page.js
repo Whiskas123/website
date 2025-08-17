@@ -197,7 +197,7 @@ export default function Home() {
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
-                {sections.slice(0, 3).map((section, index) => (
+                {sections.slice(1, 4).map((section, index) => (
                   <Link
                     key={index}
                     href={`/seccao/${section.url}`}

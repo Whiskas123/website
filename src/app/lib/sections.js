@@ -1,4 +1,5 @@
 const sections = [
+  { url: "contra-reforma-laboral", title: "Contra-reforma laboral" },
   { url: "50-aos-25-abril", title: "50 anos do 25 de Abril" },
   { url: "salarios-ontem-hoje", title: "Salários ontem e hoje" },
   { url: "plataformas-digitais", title: "Plataformas Digitais" },

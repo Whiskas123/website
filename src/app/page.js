@@ -250,10 +250,7 @@ export default function Home() {
       </div>
       <Newsletter></Newsletter>
       {slidesMedium && (
-        <>
-          <Grid gridSize="medium-grid" slides={slidesMedium.slice(0, 5)}></Grid>
-          <Grid gridSize="medium-grid" slides={slidesMedium.slice(5)}></Grid>
-        </>
+        <Grid gridSize="medium-grid" slides={slidesMedium.slice(0, 8)}></Grid>
       )}
       {slidesSmall && <Grid gridSize="small-grid" slides={slidesSmall}></Grid>}
     </>

@@ -194,7 +194,7 @@ export default function Home() {
           }`}
         >
           <ul>
-            {sections.slice(0, 3).map((section, index) => (
+            {sections[0].map((section, index) => (
               <Link
                 key={index}
                 href={`/seccao/${section.url}`}

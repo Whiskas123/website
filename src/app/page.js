@@ -12,6 +12,46 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "O anteprojeto e a contratação coletiva",
+      author: "João Leal Amado",
+      id: "33",
+      section: "Contra-reforma laboral",
+      imageUrl: "/images/33.jpeg",
+    },
+    {
+      title:
+        "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
+      section: "Contra-reforma laboral",
+      author: "Joana Neto",
+      imageUrl: "/images/34.jpeg",
+      id: "34",
+    },
+    {
+      title:
+        "Trabalhadores sem formação: é este o plano 'modernizador' do Governo?",
+      author: "Ulisses Garrido",
+      section: "Contra-reforma laboral",
+      id: "35",
+      imageUrl: "/images/35.jpeg",
+    },
+    {
+      title: "392: licença para expulsar!",
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      imageUrl: "/images/36.jpeg",
+      id: "36",
+    },
+    {
+      title: '"Trabalho XXI": roteiro para um precário abdicante',
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      id: "37",
+      imageUrl: "/images/37.jpeg",
+    },
+  ];
+
+  const slidesMedium = [
+    {
       title:
         "Política salarial e negociação coletiva em três setores: têxteis, energia e nos médicos",
       author: "Maria da Paz Campos Lima",
@@ -19,7 +59,6 @@ export default function Home() {
       section: "Salários ontem e hoje",
       imageUrl: "/images/19_PM.jpg",
     },
-
     {
       title: "O Movimento Sindical na Construção da Democracia",
       section: "50 anos do 25 de abril",
@@ -51,9 +90,6 @@ export default function Home() {
       id: "18",
       imageUrl: "/images/alain_supiot.png",
     },
-  ];
-
-  const slidesMedium = [
     {
       title:
         "Como tem evoluído a fatia do bolo que é recebida pelos trabalhadores em Portugal?",
@@ -69,7 +105,6 @@ export default function Home() {
       imageUrl: "/images/22_PM.jpg",
       id: "1",
     },
-
     {
       title:
         "Entrevista com Leïla Chaibi sobre a diretiva europeia do trabalho em plataformas",
@@ -78,7 +113,6 @@ export default function Home() {
       imageUrl: "/images/chaibi_1.jpeg",
       id: "10",
     },
-
     {
       title:
         "As lutas que se estão a (re)fazer e os novos perfis de ação em Portugal",
@@ -216,7 +250,10 @@ export default function Home() {
       </div>
       <Newsletter></Newsletter>
       {slidesMedium && (
-        <Grid gridSize="medium-grid" slides={slidesMedium}></Grid>
+        <>
+          <Grid gridSize="medium-grid" slides={slidesMedium.slice(0, 5)}></Grid>
+          <Grid gridSize="medium-grid" slides={slidesMedium.slice(5)}></Grid>
+        </>
       )}
       {slidesSmall && <Grid gridSize="small-grid" slides={slidesSmall}></Grid>}
     </>

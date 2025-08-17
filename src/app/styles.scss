@@ -1067,6 +1067,7 @@ footer {
   left: 0; // Align it to the left
   height: 100%; // Full height to cover the viewport
   transform: translateX(-100%); // Ensure it starts off-screen on mobile
+  overflow-y: auto; // Make it scrollable
 
   @media (max-width: 768px) {
     min-width: 80%;

@@ -1068,14 +1068,23 @@ footer {
   left: 0; // Align it to the left
   transform: translateX(-100%); // Ensure it starts off-screen on mobile
   overflow-y: auto; // Make it scrollable
+  -webkit-overflow-scrolling: touch; // Enable momentum scrolling on iOS
+  overscroll-behavior: contain; // Prevent scroll chaining on iOS
 
   @media (max-width: 768px) {
     min-width: 80%;
     height: calc(100vh - #{$navbar-height-mobile}); // Mobile height
+    height: calc(
+      100dvh - #{$navbar-height-mobile}
+    ); // Dynamic viewport height for iOS
+    max-height: calc(
+      100vh - #{$navbar-height-mobile}
+    ); // Fallback for older browsers
   }
 
   @media (min-width: 769px) {
     height: calc(100vh - #{$navbar-height}); // Desktop height
+    height: calc(100dvh - #{$navbar-height}); // Dynamic viewport height for iOS
   }
 
   &.visible {

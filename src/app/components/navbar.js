@@ -153,9 +153,9 @@ export default function Navbar() {
                 ))}
               </ul>
             </li>
-            {sections.slice(3).map((section, index) => (
+            {sections.slice(4).map((section, index) => (
               <Link
-                key={index + 3}
+                key={index + 4}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
                 onClick={handleSidebarClick}

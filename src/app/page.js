@@ -23,7 +23,7 @@ export default function Home() {
         "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
       section: "Contra-reforma laboral",
       author: "Joana Neto",
-      imageUrl: "/images/34.jpeg",
+      imageUrl: "/images/37.jpeg",
       id: "34",
     },
     {

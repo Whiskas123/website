@@ -1075,6 +1075,18 @@ footer {
   &.visible {
     transform: translateX(0); // Slide into view on mobile
   }
+
+  .novo-indicator {
+    background-color: $color-darker-salmon;
+    color: white;
+    font-size: 0.5em;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
 .left-column {

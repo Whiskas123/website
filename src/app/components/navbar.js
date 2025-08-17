@@ -125,12 +125,25 @@ export default function Navbar() {
           onClick={(e) => e.stopPropagation()}
         >
           <ul>
+            {sections.slice(0, 1).map((section, index) => (
+              <Link
+                key={index}
+                href={`/seccao/${section.url}`}
+                className="no-decoration"
+                onClick={handleSidebarClick}
+              >
+                <li>
+                  {section.title}
+                  <span className="novo-indicator">Novo!</span>
+                </li>
+              </Link>
+            ))}
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
-                {sections.slice(0, 3).map((section, index) => (
+                {sections.slice(1, 4).map((section, index) => (
                   <Link
-                    key={index}
+                    key={index + 1}
                     href={`/seccao/${section.url}`}
                     className="no-decoration"
                     onClick={handleSidebarClick}

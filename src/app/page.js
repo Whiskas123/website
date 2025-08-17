@@ -194,12 +194,21 @@ export default function Home() {
           }`}
         >
           <ul>
+            {sections.slice(0, 3).map((section, index) => (
+              <Link
+                key={index}
+                href={`/seccao/${section.url}`}
+                className="no-decoration"
+              >
+                <li>{section.title}</li>
+              </Link>
+            ))}
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
                 {sections.slice(1, 4).map((section, index) => (
                   <Link
-                    key={index}
+                    key={index + 1}
                     href={`/seccao/${section.url}`}
                     className="no-decoration"
                   >
@@ -208,9 +217,9 @@ export default function Home() {
                 ))}
               </ul>
             </li>
-            {sections.slice(3).map((section, index) => (
+            {sections.slice(4).map((section, index) => (
               <Link
-                key={index + 3}
+                key={index + 4}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
               >

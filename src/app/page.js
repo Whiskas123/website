@@ -42,11 +42,11 @@ export default function Home() {
       id: "36",
     },
     {
-      title: '"Trabalho XXI": roteiro para um precário abdicante',
-      author: "João Leal Amado",
+      title: "Contrarreforma laboral: a precariedade nunca existiu",
+      author: "Paulo Pedroso",
       section: "Contra-reforma laboral",
-      id: "37",
-      imageUrl: "/images/37.jpeg",
+      id: "38",
+      imageUrl: "/images/38.jpeg",
     },
   ];
 

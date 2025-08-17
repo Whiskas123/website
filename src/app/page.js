@@ -32,21 +32,47 @@ export default function Home() {
       author: "Ulisses Garrido",
       section: "Contra-reforma laboral",
       id: "35",
-      imageUrl: "/images/35.jpeg",
+      imageUrl: "/images/formacao.jpg",
     },
     {
-      title: "392: licença para expulsar!",
-      author: "João Leal Amado",
+      title: "Mais gato por lebre",
+      author: "Manuel Carvalho da Silva",
       section: "Contra-reforma laboral",
-      imageUrl: "/images/36.jpeg",
-      id: "36",
+      id: "40",
+      imageUrl: "/images/carvalho_silva.jpg",
     },
+
     {
       title: "Contrarreforma laboral: a precariedade nunca existiu",
       author: "Paulo Pedroso",
       section: "Contra-reforma laboral",
       id: "38",
       imageUrl: "/images/38.jpeg",
+    },
+  ];
+
+  const slidesMediumContraReforma = [
+    {
+      title: "392: licença para expulsar!",
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      imageUrl: "/images/amado.jpeg",
+      id: "36",
+    },
+
+    {
+      title: "Pseudopresunção de laboralidade nas plataformas digitais",
+      author: "Teresa Coelho Moreira | Guilherme Dray",
+      section: "Contra-reforma laboral",
+      id: "39",
+      imageUrl: "/images/35.jpeg",
+    },
+    {
+      title: "“Trabalho XXI”: roteiro para um precário abdicante",
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      id: "37",
+      imageUrl: "/images/37.jpeg",
     },
   ];
 
@@ -261,9 +287,13 @@ export default function Home() {
         </div>
       </div>
       <Newsletter></Newsletter>
+      {slidesMediumContraReforma && (
+        <Grid gridSize="medium-grid" slides={slidesMediumContraReforma}></Grid>
+      )}
       {slidesMedium && (
         <Grid gridSize="medium-grid" slides={slidesMedium.slice(0, 8)}></Grid>
       )}
+
       {slidesSmall && <Grid gridSize="small-grid" slides={slidesSmall}></Grid>}
     </>
   );

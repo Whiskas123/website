@@ -774,7 +774,7 @@ footer {
   margin: 0 auto;
   display: grid;
   margin-top: 20px !important;
-  margin-bottom: 7vh;
+  margin-bottom: 4vh;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 20px;
@@ -951,7 +951,7 @@ footer {
   }
 
   ul {
-    margin-top: 7vh;
+    margin-top: 4vh;
     list-style: none; // Remove default list styling
     padding: 0;
     @media (max-width: 768px) {
@@ -1078,7 +1078,7 @@ footer {
 }
 
 .left-column {
-  width: 15%;
+  width: 19%;
   padding-left: 20px;
   background-color: #ffe5e2;
   color: $color-black; // Ensure text is readable
@@ -1086,6 +1086,18 @@ footer {
 
   @media (max-width: 768px) {
     display: none;
+  }
+
+  .novo-indicator {
+    background-color: $color-darker-salmon;
+    color: white;
+    font-size: 0.5em;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 

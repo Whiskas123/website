@@ -194,13 +194,16 @@ export default function Home() {
           }`}
         >
           <ul>
-            {sections[0].map((section, index) => (
+            {sections.slice(0, 1).map((section, index) => (
               <Link
                 key={index}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
               >
-                <li>{section.title}</li>
+                <li>
+                  {section.title}
+                  <span className="novo-indicator">Novo!</span>
+                </li>
               </Link>
             ))}
             <li className="temas-centrais">

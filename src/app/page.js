@@ -23,7 +23,7 @@ export default function Home() {
         "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
       section: "Contra-reforma laboral",
       author: "Joana Neto",
-      imageUrl: "/images/37.jpeg",
+      imageUrl: "/images/joana_neto.jpg",
       id: "34",
     },
     {
@@ -65,14 +65,14 @@ export default function Home() {
       author: "Teresa Coelho Moreira | Guilherme Dray",
       section: "Contra-reforma laboral",
       id: "39",
-      imageUrl: "/images/35.jpeg",
+      imageUrl: "/images/37.jpeg",
     },
     {
       title: "“Trabalho XXI”: roteiro para um precário abdicante",
       author: "João Leal Amado",
       section: "Contra-reforma laboral",
       id: "37",
-      imageUrl: "/images/37.jpeg",
+      imageUrl: "/images/35.jpeg",
     },
   ];
 

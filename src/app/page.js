@@ -26,15 +26,14 @@ export default function Home() {
       id: "38",
       imageUrl: "/images/38.jpeg",
     },
-
     {
-      title:
-        "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
+      title: "Pseudopresunção de laboralidade nas plataformas digitais",
+      author: "Teresa Coelho Moreira | Guilherme Dray",
       section: "Contra-reforma laboral",
-      author: "Joana Neto",
-      imageUrl: "/images/joana_neto.jpg",
-      id: "34",
+      id: "39",
+      imageUrl: "/images/37.jpeg",
     },
+
     {
       title:
         "Trabalhadores sem formação: é este o plano 'modernizador' do Governo?",
@@ -60,13 +59,13 @@ export default function Home() {
       imageUrl: "/images/amado.jpeg",
       id: "36",
     },
-
     {
-      title: "Pseudopresunção de laboralidade nas plataformas digitais",
-      author: "Teresa Coelho Moreira | Guilherme Dray",
+      title:
+        "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
       section: "Contra-reforma laboral",
-      id: "39",
-      imageUrl: "/images/37.jpeg",
+      author: "Joana Neto",
+      imageUrl: "/images/joana_neto.jpg",
+      id: "34",
     },
     {
       title: "“Trabalho XXI”: roteiro para um precário abdicante",

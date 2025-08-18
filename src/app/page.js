@@ -18,6 +18,14 @@ export default function Home() {
       section: "Contra-reforma laboral",
       imageUrl: "/images/33.jpeg",
     },
+
+    {
+      title: "Contrarreforma laboral: a precariedade nunca existiu",
+      author: "Paulo Pedroso",
+      section: "Contra-reforma laboral",
+      id: "38",
+      imageUrl: "/images/38.jpeg",
+    },
     {
       title:
         "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",
@@ -40,14 +48,6 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "40",
       imageUrl: "/images/carvalho_silva.jpg",
-    },
-
-    {
-      title: "Contrarreforma laboral: a precariedade nunca existiu",
-      author: "Paulo Pedroso",
-      section: "Contra-reforma laboral",
-      id: "38",
-      imageUrl: "/images/38.jpeg",
     },
   ];
 

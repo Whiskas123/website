@@ -26,6 +26,7 @@ export default function Home() {
       id: "38",
       imageUrl: "/images/38.jpeg",
     },
+
     {
       title:
         "Trabalho XXI: uma receita do passado que agrava a exclusão de grupos vulneráveis",

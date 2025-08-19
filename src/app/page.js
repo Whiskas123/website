@@ -74,6 +74,13 @@ export default function Home() {
       id: "37",
       imageUrl: "/images/35.jpeg",
     },
+    {
+      title: "O Luís contra quem trabalha",
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "41",
+      imageUrl: "/images/34.jpeg",
+    },
   ];
 
   const slidesMedium = [

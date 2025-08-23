@@ -20,13 +20,6 @@ export default function Home() {
     },
 
     {
-      title: "Contrarreforma laboral: a precariedade nunca existiu",
-      author: "Paulo Pedroso",
-      section: "Contra-reforma laboral",
-      id: "38",
-      imageUrl: "/images/38.jpeg",
-    },
-    {
       title: "Pseudopresunção de laboralidade nas plataformas digitais",
       author: "Teresa Coelho Moreira | Guilherme Dray",
       section: "Contra-reforma laboral",
@@ -35,19 +28,27 @@ export default function Home() {
     },
 
     {
-      title:
-        "Trabalhadores sem formação: é este o plano 'modernizador' do Governo?",
-      author: "Ulisses Garrido",
+      title: "Contrarreforma laboral: a precariedade nunca existiu",
+      author: "Paulo Pedroso",
       section: "Contra-reforma laboral",
-      id: "35",
-      imageUrl: "/images/formacao.jpg",
+      id: "38",
+      imageUrl: "/images/38.jpeg",
     },
+
     {
       title: "Mais gato por lebre",
       author: "Manuel Carvalho da Silva",
       section: "Contra-reforma laboral",
       id: "40",
       imageUrl: "/images/carvalho_silva.jpg",
+    },
+
+    {
+      title: "O Luís contra quem trabalha",
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "41",
+      imageUrl: "/images/34.jpeg",
     },
   ];
 
@@ -75,11 +76,28 @@ export default function Home() {
       imageUrl: "/images/35.jpeg",
     },
     {
-      title: "O Luís contra quem trabalha",
-      author: "José Soeiro",
+      title:
+        "Trabalhadores sem formação: é este o plano 'modernizador' do Governo?",
+      author: "Ulisses Garrido",
       section: "Contra-reforma laboral",
-      id: "41",
-      imageUrl: "/images/34.jpeg",
+      id: "35",
+      imageUrl: "/images/formacao.jpg",
+    },
+
+    {
+      title:
+        "Mais um ou dois dias de “férias” e as coisas que realmente importam",
+      author: "Milena Rouxinol",
+      section: "Contra-reforma laboral",
+      id: "42",
+      imageUrl: "/images/milena.jpg",
+    },
+    {
+      title: "Trabalho XXI: a precariedade por tempo indeterminado",
+      author: "José Pedro Pinto",
+      section: "Contra-reforma laboral",
+      id: "43",
+      imageUrl: "/images/pedropinto.jpeg",
     },
   ];
 

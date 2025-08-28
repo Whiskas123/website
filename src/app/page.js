@@ -111,6 +111,7 @@ export default function Home() {
       author: "",
       section: "Contra-reforma laboral",
       id: "45",
+      imageUrl: "/images/cravo.jpg",
     },
   ];
 

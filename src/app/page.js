@@ -99,6 +99,19 @@ export default function Home() {
       id: "43",
       imageUrl: "/images/pedropinto.jpeg",
     },
+    {
+      title: "Uma agenda para a negação do trabalho digno?",
+      author: "Hermes Augusto Costa",
+      section: "Contra-reforma laboral",
+      id: "44",
+      imageUrl: "/images/hermes.jpeg",
+    },
+    {
+      title: "Apelo às centrais sindicais e aos trabalhadores",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "45",
+    },
   ];
 
   const slidesMedium = [

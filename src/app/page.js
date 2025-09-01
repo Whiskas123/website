@@ -113,6 +113,21 @@ export default function Home() {
       id: "45",
       imageUrl: "/images/cravo.jpg",
     },
+    {
+      title:
+        "Divididos Perdemos, Unidos Vencemos: Hora de ação sindical unida!",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "47",
+      imageUrl: "/images/imagem_manif.jpg",
+    },
+    {
+      title: "O direito à greve e os serviços mínimos",
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      id: "46",
+      imageUrl: "/images/grevegeral.jpg",
+    },
   ];
 
   const slidesMedium = [

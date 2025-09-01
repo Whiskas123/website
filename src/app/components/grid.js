@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import OptimizedImage from "./OptimizedImage";
 
 export default function Grid({ gridSize = "big-grid", slides }) {
   return (
@@ -11,7 +12,25 @@ export default function Grid({ gridSize = "big-grid", slides }) {
           className={`div${index + 1}`}
           onClick={() => (window.location.href = `/posts/${slide.id}`)}
         >
-          {slide.imageUrl && <img src={slide.imageUrl} alt={slide.title} />}
+          {slide.imageUrl && (
+            <OptimizedImage
+              src={slide.imageUrl}
+              alt={slide.title}
+              width={800}
+              height={600}
+              style={{
+                width: "100%",
+                height: "70%",
+                objectFit: "cover",
+                objectPosition: "center",
+                marginBottom: "10px",
+              }}
+              loading={index < 4 ? "eager" : "lazy"}
+              priority={index < 2}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              fallbackSrc={slide.imageUrl}
+            />
+          )}
           <div className="article-info">
             <div className="article-sections">
               <span className="article-section">

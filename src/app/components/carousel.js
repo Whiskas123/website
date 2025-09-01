@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -38,11 +39,16 @@ export default function Carousel() {
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div
-            className="carousel-slide"
-            key={index}
-            style={{ backgroundImage: `url(${slide.imageUrl})` }}
-          >
+          <div className="carousel-slide" key={index}>
+            <Image
+              src={slide.imageUrl}
+              alt={slide.title}
+              fill
+              style={{ objectFit: "cover" }}
+              priority={index === currentSlide}
+              loading={index === currentSlide ? "eager" : "lazy"}
+              sizes="100vw"
+            />
             <h2>{slide.title}</h2>
           </div>
         ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function CardCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,10 +37,15 @@ export default function CardCarousel() {
             }}
           >
             <div className="slide-content">
-              <img
+              <Image
                 src={slide.imageUrl}
                 alt={slide.title}
                 className="slide-image"
+                width={400}
+                height={300}
+                priority={index === currentSlide}
+                loading={index === currentSlide ? "eager" : "lazy"}
+                sizes="(max-width: 768px) 100vw, 400px"
               />
               <div className="slide-text">{slide.title}</div>
             </div>

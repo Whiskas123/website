@@ -852,7 +852,9 @@ footer {
   .div7,
   .div8,
   .div9,
-  .div10 {
+  .div10,
+  .div11,
+  .div12 {
     height: 40vh; // Equal height for all containers
     display: flex;
     flex-direction: column;
@@ -895,13 +897,16 @@ footer {
     .div7,
     .div8,
     .div9,
-    .div10 {
+    .div10,
+    .div11,
+    .div12 {
       width: 100%;
       margin-bottom: 1em;
       height: auto;
     }
   }
 }
+
 .horizontal-line-container {
   display: flex;
   align-items: center; // Vertically center the lines

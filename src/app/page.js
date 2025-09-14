@@ -128,6 +128,13 @@ export default function Home() {
       id: "46",
       imageUrl: "/images/grevegeral.jpg",
     },
+    {
+      title: "O trabalho que o século XXI dispensa",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "48",
+      imageUrl: "/images/48.jpeg",
+    },
   ];
 
   const slidesMedium = [

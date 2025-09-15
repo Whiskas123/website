@@ -82,6 +82,12 @@ export default function OptimizedImage({
         .optimized-image-container {
           position: relative;
           overflow: hidden;
+          transition: filter 0.3s ease, transform 0.2s ease;
+        }
+
+        .optimized-image-container:hover {
+          filter: brightness(0.8) sepia(1) hue-rotate(-50deg);
+          transform: scale(1.02);
         }
 
         .image-skeleton {

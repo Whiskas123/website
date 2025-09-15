@@ -12,47 +12,61 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "O anteprojeto e a contratação coletiva",
+      title: "O direito à greve e os serviços mínimos",
       author: "João Leal Amado",
-      id: "33",
       section: "Contra-reforma laboral",
-      imageUrl: "/images/33.jpeg",
+      id: "46",
+      imageUrl: "/images/grevegeral.jpg",
     },
 
     {
-      title: "Pseudopresunção de laboralidade nas plataformas digitais",
-      author: "Teresa Coelho Moreira | Guilherme Dray",
+      title: "Apelo às centrais sindicais e aos trabalhadores",
+      author: "",
       section: "Contra-reforma laboral",
-      id: "39",
-      imageUrl: "/images/37.jpeg",
+      id: "45",
+      imageUrl: "/images/cravo.jpg",
+    },
+    {
+      title:
+        "Reforma laboral de Montenegro: injustificada, injusta e indesejável",
+      author: "Ricardo Paes Mamede",
+      section: "Contra-reforma laboral",
+      id: "49",
+      imageUrl: "/images/49.jpg",
+    },
+    {
+      title:
+        "Divididos Perdemos, Unidos Vencemos: Hora de ação sindical unida!",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "47",
+      imageUrl: "/images/imagem_manif.jpg",
     },
 
     {
-      title: "Contrarreforma laboral: a precariedade nunca existiu",
-      author: "Paulo Pedroso",
+      title: "O trabalho que o século XXI dispensa",
+      author: "",
       section: "Contra-reforma laboral",
-      id: "38",
-      imageUrl: "/images/38.jpeg",
-    },
-
-    {
-      title: "Mais gato por lebre",
-      author: "Manuel Carvalho da Silva",
-      section: "Contra-reforma laboral",
-      id: "40",
-      imageUrl: "/images/carvalho_silva.jpg",
-    },
-
-    {
-      title: "O Luís contra quem trabalha",
-      author: "José Soeiro",
-      section: "Contra-reforma laboral",
-      id: "41",
-      imageUrl: "/images/34.jpeg",
+      id: "48",
+      imageUrl: "/images/48.jpeg",
     },
   ];
 
   const slidesMediumContraReforma = [
+    {
+      title: "Trabalho XXI: a precariedade por tempo indeterminado",
+      author: "José Pedro Pinto",
+      section: "Contra-reforma laboral",
+      id: "43",
+      imageUrl: "/images/pedropinto.jpeg",
+    },
+    {
+      title: "Uma agenda para a negação do trabalho digno?",
+      author: "Hermes Augusto Costa",
+      section: "Contra-reforma laboral",
+      id: "44",
+      imageUrl: "/images/hermes.jpeg",
+    },
     {
       title: "392: licença para expulsar!",
       author: "João Leal Amado",
@@ -92,48 +106,45 @@ export default function Home() {
       id: "42",
       imageUrl: "/images/milena.jpg",
     },
+
     {
-      title: "Trabalho XXI: a precariedade por tempo indeterminado",
-      author: "José Pedro Pinto",
-      section: "Contra-reforma laboral",
-      id: "43",
-      imageUrl: "/images/pedropinto.jpeg",
-    },
-    {
-      title: "Uma agenda para a negação do trabalho digno?",
-      author: "Hermes Augusto Costa",
-      section: "Contra-reforma laboral",
-      id: "44",
-      imageUrl: "/images/hermes.jpeg",
-    },
-    {
-      title: "Apelo às centrais sindicais e aos trabalhadores",
-      author: "",
-      section: "Contra-reforma laboral",
-      id: "45",
-      imageUrl: "/images/cravo.jpg",
-    },
-    {
-      title:
-        "Divididos Perdemos, Unidos Vencemos: Hora de ação sindical unida!",
-      author: "",
-      section: "Contra-reforma laboral",
-      id: "47",
-      imageUrl: "/images/imagem_manif.jpg",
-    },
-    {
-      title: "O direito à greve e os serviços mínimos",
+      title: "O anteprojeto e a contratação coletiva",
       author: "João Leal Amado",
+      id: "33",
       section: "Contra-reforma laboral",
-      id: "46",
-      imageUrl: "/images/grevegeral.jpg",
+      imageUrl: "/images/33.jpeg",
     },
+
     {
-      title: "O trabalho que o século XXI dispensa",
-      author: "",
+      title: "Pseudopresunção de laboralidade nas plataformas digitais",
+      author: "Teresa Coelho Moreira | Guilherme Dray",
       section: "Contra-reforma laboral",
-      id: "48",
-      imageUrl: "/images/48.jpeg",
+      id: "39",
+      imageUrl: "/images/37.jpeg",
+    },
+
+    {
+      title: "Contrarreforma laboral: a precariedade nunca existiu",
+      author: "Paulo Pedroso",
+      section: "Contra-reforma laboral",
+      id: "38",
+      imageUrl: "/images/38.jpeg",
+    },
+
+    {
+      title: "Mais gato por lebre",
+      author: "Manuel Carvalho da Silva",
+      section: "Contra-reforma laboral",
+      id: "40",
+      imageUrl: "/images/carvalho_silva.jpg",
+    },
+
+    {
+      title: "O Luís contra quem trabalha",
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "41",
+      imageUrl: "/images/34.jpeg",
     },
   ];
 
@@ -349,7 +360,10 @@ export default function Home() {
       </div>
       <Newsletter></Newsletter>
       {slidesMediumContraReforma && (
-        <Grid gridSize="medium-grid" slides={slidesMediumContraReforma}></Grid>
+        <Grid
+          gridSize="medium-grid"
+          slides={[...slidesMediumContraReforma].reverse()}
+        ></Grid>
       )}
       {slidesMedium && (
         <Grid gridSize="medium-grid" slides={slidesMedium.slice(0, 8)}></Grid>

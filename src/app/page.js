@@ -35,20 +35,19 @@ export default function Home() {
       imageUrl: "/images/49.jpg",
     },
     {
-      title:
-        "Divididos Perdemos, Unidos Vencemos: Hora de ação sindical unida!",
-      author: "",
+      title: "Trabalho XXI: rerum novarum?",
+      author: "João Fraga de Oliveira",
       section: "Contra-reforma laboral",
-      id: "47",
-      imageUrl: "/images/imagem_manif.jpg",
+      id: "50",
+      imageUrl: "/images/rerum.jpg",
     },
-
     {
-      title: "O trabalho que o século XXI dispensa",
-      author: "",
+      title:
+        "O “Anteprojeto” de Lei da reforma da legislação laboral” – Trabalho XXI ou a liquidação dos direitos laborais",
+      author: "António Garcia Pereira",
       section: "Contra-reforma laboral",
-      id: "48",
-      imageUrl: "/images/48.jpeg",
+      id: "51",
+      imageUrl: "/images/51.jpg",
     },
   ];
 
@@ -145,6 +144,22 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "41",
       imageUrl: "/images/34.jpeg",
+    },
+    {
+      title:
+        "Divididos Perdemos, Unidos Vencemos: Hora de ação sindical unida!",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "47",
+      imageUrl: "/images/imagem_manif.jpg",
+    },
+
+    {
+      title: "O trabalho que o século XXI dispensa",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "48",
+      imageUrl: "/images/48.jpeg",
     },
   ];
 

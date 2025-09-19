@@ -12,13 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "O direito à greve e os serviços mínimos",
-      author: "João Leal Amado",
-      section: "Contra-reforma laboral",
-      id: "46",
-      imageUrl: "/images/grevegeral.jpg",
+      title:
+        "Carta Aberta: Portugueses e imigrantes, juntos por um país justo, livre e fraterno",
+      author: "",
+      section: "",
+      id: "52",
+      imageUrl: "/images/52.jpeg",
     },
-
     {
       title: "Apelo às centrais sindicais e aos trabalhadores",
       author: "",
@@ -42,6 +42,16 @@ export default function Home() {
       imageUrl: "/images/rerum.jpg",
     },
     {
+      title: "O direito à greve e os serviços mínimos",
+      author: "João Leal Amado",
+      section: "Contra-reforma laboral",
+      id: "46",
+      imageUrl: "/images/grevegeral.jpg",
+    },
+  ];
+
+  const slidesMediumContraReforma = [
+    {
       title:
         "O “Anteprojeto” de Lei da reforma da legislação laboral” – Trabalho XXI ou a liquidação dos direitos laborais",
       author: "António Garcia Pereira",
@@ -49,9 +59,6 @@ export default function Home() {
       id: "51",
       imageUrl: "/images/51.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "Trabalho XXI: a precariedade por tempo indeterminado",
       author: "José Pedro Pinto",

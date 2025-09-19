@@ -41,6 +41,17 @@ export default function Home() {
       id: "50",
       imageUrl: "/images/rerum.jpg",
     },
+
+    {
+      title: "Leis laborais: uma contrarreforma e uma necessária “errata”",
+      author: "Miguel Cabrita",
+      section: "Contra-reforma laboral",
+      id: "53",
+      imageUrl: "/images/cabrita.jpg",
+    },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "O direito à greve e os serviços mínimos",
       author: "João Leal Amado",
@@ -48,9 +59,6 @@ export default function Home() {
       id: "46",
       imageUrl: "/images/grevegeral.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "O “Anteprojeto” de Lei da reforma da legislação laboral” – Trabalho XXI ou a liquidação dos direitos laborais",

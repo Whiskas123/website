@@ -42,12 +42,16 @@ export default function SearchResultsContent() {
 
   const searchResults = allPosts
     .filter((post) => {
-      const titleMatch = post.title.toLowerCase().includes(query.toLowerCase());
-      const authorMatch = Array.isArray(post.author)
-        ? post.author.some((author) =>
-            author.toLowerCase().includes(query.toLowerCase())
-          )
-        : post.author.toLowerCase().includes(query.toLowerCase());
+      const titleMatch = post.title
+        ?.toLowerCase()
+        .includes(query.toLowerCase());
+      const authorMatch = post.author
+        ? Array.isArray(post.author)
+          ? post.author.some((author) =>
+              author?.toLowerCase().includes(query.toLowerCase())
+            )
+          : post.author.toLowerCase().includes(query.toLowerCase())
+        : false;
       const contentMatch = post.content
         ?.toLowerCase()
         .includes(query.toLowerCase());
@@ -58,13 +62,15 @@ export default function SearchResultsContent() {
       // Helper function to check if post matches in title or author
       const hasMainMatch = (post) => {
         const titleMatch = post.title
-          .toLowerCase()
+          ?.toLowerCase()
           .includes(query.toLowerCase());
-        const authorMatch = Array.isArray(post.author)
-          ? post.author.some((author) =>
-              author.toLowerCase().includes(query.toLowerCase())
-            )
-          : post.author.toLowerCase().includes(query.toLowerCase());
+        const authorMatch = post.author
+          ? Array.isArray(post.author)
+            ? post.author.some((author) =>
+                author?.toLowerCase().includes(query.toLowerCase())
+              )
+            : post.author.toLowerCase().includes(query.toLowerCase())
+          : false;
         return titleMatch || authorMatch;
       };
 
@@ -96,9 +102,11 @@ export default function SearchResultsContent() {
                 {post.title}
               </a>
               <div className="author">
-                {Array.isArray(post.author)
-                  ? post.author.join(" | ")
-                  : post.author}
+                {post.author
+                  ? Array.isArray(post.author)
+                    ? post.author.join(" | ")
+                    : post.author
+                  : ""}
               </div>
             </li>
           ))}

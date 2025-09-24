@@ -34,9 +34,11 @@ export default async function Seccao({ params }) {
               {post.title}
             </a>
             <div className="author">
-              {Array.isArray(post.author)
-                ? post.author.join(" | ")
-                : post.author}
+              {post.author
+                ? Array.isArray(post.author)
+                  ? post.author.join(" | ")
+                  : post.author
+                : ""}
             </div>
           </li>
         ))}

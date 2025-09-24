@@ -13,12 +13,13 @@ export default function Home() {
   const slides = [
     {
       title:
-        "Carta Aberta: Portugueses e imigrantes, juntos por um país justo, livre e fraterno",
-      author: "",
-      section: "",
-      id: "52",
-      imageUrl: "/images/52.jpeg",
+        "Os salários são baixos por causa da 'rigidez' do mercado de trabalho?",
+      author: "Vicente Ferreira",
+      section: "Contra-reforma laboral",
+      id: "54",
+      imageUrl: "/images/54.png",
     },
+
     {
       title: "Apelo às centrais sindicais e aos trabalhadores",
       author: "",
@@ -27,27 +28,26 @@ export default function Home() {
       imageUrl: "/images/cravo.jpg",
     },
     {
+      title: "Relações laborais e negociação coletiva: dinamizar ou implodir?",
+      author: "Maria da Paz Campos Lima",
+      section: "Contra-reforma laboral",
+      id: "56",
+      imageUrl: "/images/56.jpeg",
+    },
+    {
+      title: "Mexer num detalhe para fazer ruir o combate à precariedade",
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "55",
+      imageUrl: "/images/55.jpg",
+    },
+    {
       title:
-        "Reforma laboral de Montenegro: injustificada, injusta e indesejável",
-      author: "Ricardo Paes Mamede",
-      section: "Contra-reforma laboral",
-      id: "49",
-      imageUrl: "/images/49.jpg",
-    },
-    {
-      title: "Trabalho XXI: rerum novarum?",
-      author: "João Fraga de Oliveira",
-      section: "Contra-reforma laboral",
-      id: "50",
-      imageUrl: "/images/rerum.jpg",
-    },
-
-    {
-      title: "Leis laborais: uma contrarreforma e uma necessária “errata”",
-      author: "Miguel Cabrita",
-      section: "Contra-reforma laboral",
-      id: "53",
-      imageUrl: "/images/cabrita.jpg",
+        "Carta Aberta: Portugueses e imigrantes, juntos por um país justo, livre e fraterno",
+      author: "",
+      section: "",
+      id: "52",
+      imageUrl: "/images/52.jpeg",
     },
   ];
 
@@ -175,6 +175,29 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "48",
       imageUrl: "/images/48.jpeg",
+    },
+    {
+      title:
+        "Reforma laboral de Montenegro: injustificada, injusta e indesejável",
+      author: "Ricardo Paes Mamede",
+      section: "Contra-reforma laboral",
+      id: "49",
+      imageUrl: "/images/49.jpg",
+    },
+    {
+      title: "Trabalho XXI: rerum novarum?",
+      author: "João Fraga de Oliveira",
+      section: "Contra-reforma laboral",
+      id: "50",
+      imageUrl: "/images/rerum.jpg",
+    },
+
+    {
+      title: "Leis laborais: uma contrarreforma e uma necessária “errata”",
+      author: "Miguel Cabrita",
+      section: "Contra-reforma laboral",
+      id: "53",
+      imageUrl: "/images/cabrita.jpg",
     },
   ];
 

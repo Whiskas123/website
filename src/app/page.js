@@ -13,6 +13,15 @@ export default function Home() {
   const slides = [
     {
       title:
+        "A proteção da parentalidade na Agenda do Trabalho XXI: um passo em frente ou dois passos atrás?",
+      author:
+        "Catarina de Oliveira Carvalho | Joana Nunes Vicente | Luísa Andias Gonçalves",
+      section: "Contra-reforma laboral",
+      id: "57",
+      imageUrl: "/images/57.jpeg",
+    },
+    {
+      title:
         "Os salários são baixos por causa da 'rigidez' do mercado de trabalho?",
       author: "Vicente Ferreira",
       section: "Contra-reforma laboral",
@@ -41,6 +50,9 @@ export default function Home() {
       id: "55",
       imageUrl: "/images/55.jpg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title:
         "Carta Aberta: Portugueses e imigrantes, juntos por um país justo, livre e fraterno",
@@ -49,9 +61,6 @@ export default function Home() {
       id: "52",
       imageUrl: "/images/52.jpeg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "O direito à greve e os serviços mínimos",
       author: "João Leal Amado",

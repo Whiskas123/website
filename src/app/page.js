@@ -180,7 +180,8 @@ export default function Home() {
 
     {
       title: "O trabalho que o século XXI dispensa",
-      author: "",
+      author:
+        "Henrique Sousa | Joana Neto | João Leal Amado | José Soeiro | Maria da Paz Campos Lima",
       section: "Contra-reforma laboral",
       id: "48",
       imageUrl: "/images/48.jpeg",

@@ -14,6 +14,7 @@ export default function OptimizedImage({
   sizes,
   style,
   fallbackSrc,
+  credit,
   ...props
 }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -67,6 +68,8 @@ export default function OptimizedImage({
         }}
         {...props}
       />
+
+      {credit && <div className="image-credit">{credit}</div>}
 
       <style jsx>{`
         @keyframes pulse {

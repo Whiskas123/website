@@ -29,6 +29,7 @@ export default function Grid({ gridSize = "big-grid", slides }) {
               priority={index < 2}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               fallbackSrc={slide.imageUrl}
+              credit={slide.credit}
             />
           )}
           <div className="article-info">

@@ -19,6 +19,7 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "57",
       imageUrl: "/images/57.jpeg",
+      credit: "© LUSA",
     },
     {
       title:
@@ -185,6 +186,7 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "48",
       imageUrl: "/images/48.jpeg",
+      credit: "© LUSA",
     },
     {
       title:
@@ -193,6 +195,7 @@ export default function Home() {
       section: "Contra-reforma laboral",
       id: "49",
       imageUrl: "/images/49.jpg",
+      credit: "© LUSA",
     },
     {
       title: "Trabalho XXI: rerum novarum?",

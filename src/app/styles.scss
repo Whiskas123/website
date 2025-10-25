@@ -665,6 +665,25 @@ footer {
   }
 }
 
+// Image credit styles
+.image-credit {
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
 // Optimize grid images
 .grids {
   .div1,

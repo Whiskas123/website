@@ -13,6 +13,21 @@ export default function Home() {
   const slides = [
     {
       title:
+        "Plataformas digitais: uma despresunção de laboralidade que é um 31…",
+      author: "João Leal Amado",
+      section: "Plataformas Digitais",
+      id: "58",
+      imageUrl: "/images/58.jpeg",
+    },
+    {
+      title: "O impúdico retorno do despedir-para-terceirizar",
+      author: "João Leal Amado",
+      section: "Plataformas Digitais",
+      id: "59",
+      imageUrl: "/images/59.jpeg",
+    },
+    {
+      title:
         "A proteção da parentalidade na Agenda do Trabalho XXI: um passo em frente ou dois passos atrás?",
       author:
         "Catarina de Oliveira Carvalho | Joana Nunes Vicente | Luísa Andias Gonçalves",
@@ -37,6 +52,9 @@ export default function Home() {
       id: "45",
       imageUrl: "/images/cravo.jpg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "Relações laborais e negociação coletiva: dinamizar ou implodir?",
       author: "Maria da Paz Campos Lima",
@@ -51,9 +69,6 @@ export default function Home() {
       id: "55",
       imageUrl: "/images/55.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "Carta Aberta: Portugueses e imigrantes, juntos por um país justo, livre e fraterno",

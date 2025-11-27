@@ -19,6 +19,11 @@ export default function Home() {
       id: "58",
       imageUrl: "/images/58.jpeg",
     },
+    {title:"A nova proposta do Governo à UGT: gozar com quem trabalha!",
+    author:"Henrique Sousa",
+    section:"Contra-reforma laboral",
+    id:"60",
+    imageUrl:"/images/henriquesousa.jpg"},
     {
       title: "O impúdico retorno do despedir-para-terceirizar",
       author: "João Leal Amado",
@@ -44,14 +49,6 @@ export default function Home() {
       id: "54",
       imageUrl: "/images/54.png",
     },
-
-    {
-      title: "Apelo às centrais sindicais e aos trabalhadores",
-      author: "",
-      section: "Contra-reforma laboral",
-      id: "45",
-      imageUrl: "/images/cravo.jpg",
-    },
   ];
 
   const slidesMediumContraReforma = [
@@ -76,6 +73,13 @@ export default function Home() {
       section: "",
       id: "52",
       imageUrl: "/images/52.jpeg",
+    },
+        {
+      title: "Apelo às centrais sindicais e aos trabalhadores",
+      author: "",
+      section: "Contra-reforma laboral",
+      id: "45",
+      imageUrl: "/images/cravo.jpg",
     },
     {
       title: "O direito à greve e os serviços mínimos",

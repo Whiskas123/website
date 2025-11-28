@@ -3,11 +3,12 @@ import { getAllSections } from "../../lib/sections";
 import { getSortedPostsData } from "../../lib/posts";
 
 export default async function Seccao({ params }) {
+  const resolvedParams = await params;
   const sections = getAllSections();
 
   // Check if params.seccao is not in any sections.url
   const sectionExists = sections.some(
-    (section) => section.url === params.seccao
+    (section) => section.url === resolvedParams.seccao
   );
   if (!sectionExists) {
     notFound();
@@ -15,12 +16,13 @@ export default async function Seccao({ params }) {
 
   // Find the section with the matching URL
   const currentSection = sections.find(
-    (section) => section.url === params.seccao
+    (section) => section.url === resolvedParams.seccao
   );
   const pageTitle = currentSection ? currentSection.title : "";
+  const sectionFiles = currentSection?.files || [];
   const allPostsData = getSortedPostsData();
   const filteredPostsData =
-    params.seccao === "todos-os-textos"
+    resolvedParams.seccao === "todos-os-textos"
       ? allPostsData.sort((a, b) => a.id - b.id) // Sort by id in ascending order
       : allPostsData.filter((post) => post.section === pageTitle);
 
@@ -40,6 +42,19 @@ export default async function Seccao({ params }) {
                   : post.author
                 : ""}
             </div>
+          </li>
+        ))}
+        {sectionFiles.map((file, index) => (
+          <li key={`file-${index}`}>
+            <a
+              className="section-post-title"
+              href={file.path}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {file.title}
+            </a>
+            <div className="author">PDF</div>
           </li>
         ))}
       </ul>

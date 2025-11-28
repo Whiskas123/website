@@ -125,7 +125,7 @@ export default function Navbar() {
           onClick={(e) => e.stopPropagation()}
         >
           <ul>
-            {sections.slice(0, 1).map((section, index) => (
+            {sections.slice(0, 2).map((section, index) => (
               <Link
                 key={index}
                 href={`/seccao/${section.url}`}
@@ -134,33 +134,39 @@ export default function Navbar() {
               >
                 <li>
                   {section.title}
-                  <span className="novo-indicator">Novo!</span>
+                  {section.isNew && <span className="novo-indicator">Novo!</span>}
                 </li>
               </Link>
             ))}
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
-                {sections.slice(1, 4).map((section, index) => (
+                {sections.slice(2, 5).map((section, index) => (
                   <Link
-                    key={index + 1}
+                    key={index + 2}
                     href={`/seccao/${section.url}`}
                     className="no-decoration"
                     onClick={handleSidebarClick}
                   >
-                    <li>{section.title}</li>
+                    <li>
+                      {section.title}
+                      {section.isNew && <span className="novo-indicator">Novo!</span>}
+                    </li>
                   </Link>
                 ))}
               </ul>
             </li>
-            {sections.slice(4).map((section, index) => (
+            {sections.slice(5).map((section, index) => (
               <Link
-                key={index + 4}
+                key={index + 5}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
                 onClick={handleSidebarClick}
               >
-                <li>{section.title}</li>
+                <li>
+                  {section.title}
+                  {section.isNew && <span className="novo-indicator">Novo!</span>}
+                </li>
               </Link>
             ))}
             <div

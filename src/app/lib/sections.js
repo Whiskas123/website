@@ -1,5 +1,33 @@
 const sections = [
-  { url: "contra-reforma-laboral", title: "Contra-reforma laboral" },
+  {
+    url: "greve-geral",
+    title: "Greve Geral",
+    isNew: true,
+    files: [
+      {
+        path: "/files/preaviso_cgtp.pdf",
+        title: "Pré-aviso de Greve Geral da CGTP",
+      },
+      {
+        path: "/files/preaviso_ugt.pdf",
+        title: "Pré-aviso de Greve Geral da UGT",
+      },
+      {
+        path: "/files/razoes_cgtp.pdf",
+        title:
+          "Razões para Combater as Propostas do Governo PSD/CDS para a Legislação Laboral (CGTP)",
+      },
+      {
+        path: "/files/resolucao_ugt.pdf",
+        title: "Resolução do Secretariado Nacional da UGT",
+      },
+    ],
+  },
+  {
+    url: "contra-reforma-laboral",
+    title: "Contra-reforma laboral",
+    isNew: true,
+  },
   { url: "50-aos-25-abril", title: "50 anos do 25 de Abril" },
   { url: "salarios-ontem-hoje", title: "Salários ontem e hoje" },
   { url: "plataformas-digitais", title: "Plataformas Digitais" },

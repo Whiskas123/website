@@ -13,17 +13,27 @@ export default function Home() {
   const slides = [
     {
       title:
+        "Pacote laboral: o governo recuou, mas a proposta tem de cair. 5 razões",
+      author: "Gonçalo Pessa",
+      section: "Contra-reforma laboral",
+      id: "62",
+      imageUrl: "/images/goncalopessa.jpg",
+    },
+    {
+      title:
         "Plataformas digitais: uma despresunção de laboralidade que é um 31…",
       author: "João Leal Amado",
       section: "Plataformas Digitais",
       id: "58",
       imageUrl: "/images/58.jpeg",
     },
-    {title:"A nova proposta do Governo à UGT: gozar com quem trabalha!",
-    author:"Henrique Sousa",
-    section:"Contra-reforma laboral",
-    id:"60",
-    imageUrl:"/images/henriquesousa.jpg"},
+    {
+      title: "A nova proposta do Governo à UGT: gozar com quem trabalha!",
+      author: "Henrique Sousa",
+      section: "Contra-reforma laboral",
+      id: "60",
+      imageUrl: "/images/henriquesousa.jpg",
+    },
     {
       title: "O impúdico retorno do despedir-para-terceirizar",
       author: "João Leal Amado",
@@ -41,6 +51,9 @@ export default function Home() {
       imageUrl: "/images/57.jpeg",
       credit: "© LUSA",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title:
         "Os salários são baixos por causa da 'rigidez' do mercado de trabalho?",
@@ -49,9 +62,6 @@ export default function Home() {
       id: "54",
       imageUrl: "/images/54.png",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "Relações laborais e negociação coletiva: dinamizar ou implodir?",
       author: "Maria da Paz Campos Lima",
@@ -74,7 +84,7 @@ export default function Home() {
       id: "52",
       imageUrl: "/images/52.jpeg",
     },
-        {
+    {
       title: "Apelo às centrais sindicais e aos trabalhadores",
       author: "",
       section: "Contra-reforma laboral",

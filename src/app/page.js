@@ -12,6 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "Greve geral, o “Trabalho XXI”, precariedade e Bertolt Brecht",
+      author: "João Fraga de Oliveira",
+      section: "Greve Geral",
+      id: "63",
+      imageUrl: "/images/63.jpeg",
+    },
+    {
       title:
         "Pacote laboral: o governo recuou, mas a proposta tem de cair. 5 razões",
       author: "Gonçalo Pessa",
@@ -41,6 +48,9 @@ export default function Home() {
       id: "59",
       imageUrl: "/images/59.jpeg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title:
         "A proteção da parentalidade na Agenda do Trabalho XXI: um passo em frente ou dois passos atrás?",
@@ -51,9 +61,6 @@ export default function Home() {
       imageUrl: "/images/57.jpeg",
       credit: "© LUSA",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "Os salários são baixos por causa da 'rigidez' do mercado de trabalho?",

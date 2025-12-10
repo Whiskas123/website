@@ -12,6 +12,27 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "É uma greve pela democracia",
+      author: "Manuel Carvalho da Silva",
+      section: "Greve Geral",
+      id: "66",
+      imageUrl: "/images/grevegeralpedra.jpg",
+    },
+    {
+      title: "As greves e as estatísticas: um casamento pouco virtuoso",
+      author: "Henrique Sousa",
+      section: "Greve Geral",
+      id: "64",
+      imageUrl: "/images/grevegeralgrafitti.png",
+    },
+    {
+      title: "A negociação colectiva como política de desenvolvimento",
+      author: "Ricardo Paes Mamede",
+      section: "Contra-reforma laboral",
+      id: "65",
+      imageUrl: "/images/universita.jpg",
+    },
+    {
       title: "Greve geral, o “Trabalho XXI”, precariedade e Bertolt Brecht",
       author: "João Fraga de Oliveira",
       section: "Greve Geral",
@@ -26,6 +47,9 @@ export default function Home() {
       id: "62",
       imageUrl: "/images/goncalopessa.jpg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title:
         "Plataformas digitais: uma despresunção de laboralidade que é um 31…",
@@ -48,9 +72,6 @@ export default function Home() {
       id: "59",
       imageUrl: "/images/59.jpeg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "A proteção da parentalidade na Agenda do Trabalho XXI: um passo em frente ou dois passos atrás?",

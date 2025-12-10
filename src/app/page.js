@@ -12,19 +12,20 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "Uma greve geral pela dignidade",
-      author: "Manuel Loff",
-      section: "Greve Geral",
-      id: "69",
-      imageUrl: "/images/loff.jpeg",
-    },
-    {
       title: "TRÊS DESENHOS PELA GREVE",
       author: "Regina Guimarães",
       section: "Greve Geral",
       id: "67",
       imageUrl: "/images/regina1.jpeg",
     },
+    {
+      title: "Uma greve geral pela dignidade",
+      author: "Manuel Loff",
+      section: "Greve Geral",
+      id: "69",
+      imageUrl: "/images/loff.jpeg",
+    },
+
     {
       title: "Que venha a rua!",
       author: "Margarida Chagas Lopes",

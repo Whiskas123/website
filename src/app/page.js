@@ -12,6 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "TRÊS DESENHOS PELA GREVE",
+      author: "Regina Guimarães",
+      section: "Greve Geral",
+      id: "67",
+      imageUrl: "/images/regina1.jpg",
+    },
+    {
       title: "É uma greve pela democracia",
       author: "Manuel Carvalho da Silva",
       section: "Greve Geral",
@@ -39,6 +46,9 @@ export default function Home() {
       id: "63",
       imageUrl: "/images/63.jpeg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title:
         "Pacote laboral: o governo recuou, mas a proposta tem de cair. 5 razões",
@@ -47,9 +57,6 @@ export default function Home() {
       id: "62",
       imageUrl: "/images/goncalopessa.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "Plataformas digitais: uma despresunção de laboralidade que é um 31…",

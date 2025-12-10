@@ -19,6 +19,13 @@ export default function Home() {
       imageUrl: "/images/regina1.jpeg",
     },
     {
+      title: "Que venha a rua!",
+      author: "Margarida Chagas Lopes",
+      section: "Greve Geral",
+      id: "68",
+      imageUrl: "/images/regina2.jpeg",
+    },
+    {
       title: "É uma greve pela democracia",
       author: "Manuel Carvalho da Silva",
       section: "Greve Geral",
@@ -39,6 +46,9 @@ export default function Home() {
       id: "65",
       imageUrl: "/images/image004.png",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "Greve geral, o “Trabalho XXI”, precariedade e Bertolt Brecht",
       author: "João Fraga de Oliveira",
@@ -46,9 +56,6 @@ export default function Home() {
       id: "63",
       imageUrl: "/images/63.jpeg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title:
         "Pacote laboral: o governo recuou, mas a proposta tem de cair. 5 razões",

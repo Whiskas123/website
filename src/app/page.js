@@ -30,7 +30,7 @@ export default function Home() {
       author: "Ricardo Paes Mamede",
       section: "Contra-reforma laboral",
       id: "65",
-      imageUrl: "/images/universita.jpg",
+      imageUrl: "/images/image004.png",
     },
     {
       title: "Greve geral, o “Trabalho XXI”, precariedade e Bertolt Brecht",

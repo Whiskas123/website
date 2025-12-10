@@ -511,7 +511,7 @@ export default function Home() {
       {slidesMediumContraReforma && (
         <Grid
           gridSize="medium-grid"
-          slides={[...slidesMediumContraReforma].reverse()}
+          slides={[...slidesMediumContraReforma]}
         ></Grid>
       )}
       {slidesMedium && (

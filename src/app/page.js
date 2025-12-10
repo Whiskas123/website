@@ -16,7 +16,7 @@ export default function Home() {
       author: "Regina Guimarães",
       section: "Greve Geral",
       id: "67",
-      imageUrl: "/images/regina1.jpg",
+      imageUrl: "/images/regina1.jpeg",
     },
     {
       title: "É uma greve pela democracia",

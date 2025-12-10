@@ -12,6 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "Uma greve geral pela dignidade",
+      author: "Manuel Loff",
+      section: "Greve Geral",
+      id: "69",
+      imageUrl: "/images/loff.jpeg",
+    },
+    {
       title: "TRÊS DESENHOS PELA GREVE",
       author: "Regina Guimarães",
       section: "Greve Geral",
@@ -39,6 +46,9 @@ export default function Home() {
       id: "64",
       imageUrl: "/images/grevegeralgrafitti.png",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "A negociação colectiva como política de desenvolvimento",
       author: "Ricardo Paes Mamede",
@@ -46,9 +56,6 @@ export default function Home() {
       id: "65",
       imageUrl: "/images/image004.png",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "Greve geral, o “Trabalho XXI”, precariedade e Bertolt Brecht",
       author: "João Fraga de Oliveira",

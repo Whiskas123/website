@@ -12,6 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "Contra o sinismo, a esperança",
+      author: "Manuel Carvalho da Silva",
+      section: "Greve Geral",
+      id: "70",
+      imageUrl: "/images/greve70.jpeg",
+    },
+    {
       title: "TRÊS DESENHOS PELA GREVE",
       author: "Regina Guimarães",
       section: "Greve Geral",
@@ -40,6 +47,9 @@ export default function Home() {
       id: "66",
       imageUrl: "/images/grevegeralpedra.jpg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "As greves e as estatísticas: um casamento pouco virtuoso",
       author: "Henrique Sousa",
@@ -47,9 +57,6 @@ export default function Home() {
       id: "64",
       imageUrl: "/images/grevegeralgrafitti.png",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "A negociação colectiva como política de desenvolvimento",
       author: "Ricardo Paes Mamede",

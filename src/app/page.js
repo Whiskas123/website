@@ -12,7 +12,7 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "Contra o sinismo, a esperança",
+      title: "Contra o cinismo, a esperança",
       author: "Manuel Carvalho da Silva",
       section: "Greve Geral",
       id: "70",

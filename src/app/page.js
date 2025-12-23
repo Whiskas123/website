@@ -12,6 +12,14 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title:
+        "À socapa, Governo abre a porta à fraude e promove trabalho não declarado",
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "71",
+      imageUrl: "/images/jsoeiro.jpeg",
+    },
+    {
       title: "Contra o cinismo, a esperança",
       author: "Manuel Carvalho da Silva",
       section: "Greve Geral",
@@ -40,6 +48,9 @@ export default function Home() {
       id: "68",
       imageUrl: "/images/regina2.jpeg",
     },
+  ];
+
+  const slidesMediumContraReforma = [
     {
       title: "É uma greve pela democracia",
       author: "Manuel Carvalho da Silva",
@@ -47,9 +58,6 @@ export default function Home() {
       id: "66",
       imageUrl: "/images/grevegeralpedra.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "As greves e as estatísticas: um casamento pouco virtuoso",
       author: "Henrique Sousa",

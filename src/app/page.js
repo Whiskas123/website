@@ -34,6 +34,24 @@ export default function Home() {
       imageUrl: "/images/regina1.jpeg",
     },
     {
+      title: "Trabalho e contrarreforma com velho pacote laboral",
+      author: "Manuel Carlos Silva",
+      section: "Contra-reforma laboral",
+      id: "72",
+      imageUrl: "/images/72.jpg",
+    },
+    
+    {
+      title: "Confederação Europeia de Sindicatos e Confederação Sindical Internacional condem agressão miliar contra Venezuela e apelam à defesa do direito internacional",
+      author: "",
+      section: "Internacional",
+      id: "73",
+      imageUrl: "/images/73.jpg",
+    },
+  ];
+
+  const slidesMediumContraReforma = [
+        {
       title: "Uma greve geral pela dignidade",
       author: "Manuel Loff",
       section: "Greve Geral",
@@ -48,9 +66,6 @@ export default function Home() {
       id: "68",
       imageUrl: "/images/regina2.jpeg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "É uma greve pela democracia",
       author: "Manuel Carvalho da Silva",

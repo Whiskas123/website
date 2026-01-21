@@ -12,6 +12,13 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
+      title: "Confederação Europeia de Sindicatos e Confederação Sindical Internacional condem agressão miliar contra Venezuela e apelam à defesa do direito internacional",
+      author: "",
+      section: "Internacional",
+      id: "73",
+      imageUrl: "/images/73.jpg",
+    },
+    {
       title:
         "À socapa, Governo abre a porta à fraude e promove trabalho não declarado",
       author: "José Soeiro",
@@ -40,14 +47,8 @@ export default function Home() {
       id: "72",
       imageUrl: "/images/72.jpg",
     },
-    
-    {
-      title: "Confederação Europeia de Sindicatos e Confederação Sindical Internacional condem agressão miliar contra Venezuela e apelam à defesa do direito internacional",
-      author: "",
-      section: "Internacional",
-      id: "73",
-      imageUrl: "/images/73.jpg",
-    },
+  
+
   ];
 
   const slidesMediumContraReforma = [

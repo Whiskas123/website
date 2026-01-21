@@ -12,7 +12,7 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
     {
-      title: "Confederação Europeia de Sindicatos e Confederação Sindical Internacional condem agressão miliar contra Venezuela e apelam à defesa do direito internacional",
+      title: "Sindicatos condenam agressão militar contra Venezuela",
       author: "",
       section: "Internacional",
       id: "73",

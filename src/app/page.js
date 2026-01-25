@@ -459,6 +459,10 @@ export default function Home() {
     console.log("sideBarVisible:", sideBarVisible);
   }, [sideBarVisible]);
 
+  // Separate sections into categories
+  const temasCentrais = sections.filter((section) => section.isTemaCentral);
+  const otherSections = sections.filter((section) => !section.isTemaCentral);
+
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -468,26 +472,12 @@ export default function Home() {
           }`}
         >
           <ul>
-            {sections.slice(0, 2).map((section, index) => (
-              <Link
-                key={index}
-                href={`/seccao/${section.url}`}
-                className="no-decoration"
-              >
-                <li>
-                  {section.title}
-                  {section.isNew && (
-                    <span className="novo-indicator">Novo!</span>
-                  )}
-                </li>
-              </Link>
-            ))}
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
-                {sections.slice(2, 5).map((section, index) => (
+                {temasCentrais.map((section, index) => (
                   <Link
-                    key={index + 2}
+                    key={`tc-${index}`}
                     href={`/seccao/${section.url}`}
                     className="no-decoration"
                   >
@@ -501,9 +491,9 @@ export default function Home() {
                 ))}
               </ul>
             </li>
-            {sections.slice(5).map((section, index) => (
+            {otherSections.map((section, index) => (
               <Link
-                key={index + 5}
+                key={`other-${index}`}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
               >

@@ -2,7 +2,6 @@ const sections = [
   {
     url: "greve-geral",
     title: "Greve Geral",
-    isNew: true,
     files: [
       {
         path: "/files/preaviso_cgtp.pdf",
@@ -23,14 +22,13 @@ const sections = [
       },
     ],
   },
+  {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true},
   {
     url: "contra-reforma-laboral",
-    title: "Contra-reforma laboral",
-    isNew: true,
-  },
-  { url: "50-aos-25-abril", title: "50 anos do 25 de Abril" },
-  { url: "salarios-ontem-hoje", title: "Salários ontem e hoje" },
-  { url: "plataformas-digitais", title: "Plataformas Digitais" },
+    title: "Contra-reforma laboral", isTemaCentral: true },
+  { url: "50-aos-25-abril", title: "50 anos do 25 de Abril", isTemaCentral: true},
+  { url: "salarios-ontem-hoje", title: "Salários ontem e hoje",isTemaCentral: true },
+  { url: "plataformas-digitais", title: "Plataformas Digitais", isTemaCentral: true },
   { url: "recensoes", title: "Recensões" },
   { url: "mesa-controversia", title: "Mesa de Controvérsia" },
   { url: "internacional", title: "Internacional" },

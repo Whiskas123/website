@@ -19,6 +19,10 @@ export default function Navbar() {
   const isHomePage = pathname === "/";
   const router = useRouter();
 
+  // Separate sections into categories
+  const temasCentrais = sections.filter((section) => section.isTemaCentral);
+  const otherSections = sections.filter((section) => !section.isTemaCentral);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
@@ -125,25 +129,12 @@ export default function Navbar() {
           onClick={(e) => e.stopPropagation()}
         >
           <ul>
-            {sections.slice(0, 2).map((section, index) => (
-              <Link
-                key={index}
-                href={`/seccao/${section.url}`}
-                className="no-decoration"
-                onClick={handleSidebarClick}
-              >
-                <li>
-                  {section.title}
-                  {section.isNew && <span className="novo-indicator">Novo!</span>}
-                </li>
-              </Link>
-            ))}
             <li className="temas-centrais">
               <div>Temas Centrais</div>
               <ul>
-                {sections.slice(2, 5).map((section, index) => (
+                {temasCentrais.map((section, index) => (
                   <Link
-                    key={index + 2}
+                    key={`tc-${index}`}
                     href={`/seccao/${section.url}`}
                     className="no-decoration"
                     onClick={handleSidebarClick}
@@ -156,9 +147,9 @@ export default function Navbar() {
                 ))}
               </ul>
             </li>
-            {sections.slice(5).map((section, index) => (
+            {otherSections.map((section, index) => (
               <Link
-                key={index + 5}
+                key={`other-${index}`}
                 href={`/seccao/${section.url}`}
                 className="no-decoration"
                 onClick={handleSidebarClick}

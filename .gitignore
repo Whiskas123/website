@@ -42,8 +42,7 @@ next-env.d.ts
 bun.lockb
 data/newsletter-emails.txt
 data/newsletter-emails.txt
-bun.lockb
-bun.lockb
+
 eslint.config.mjs
 next.config.mjs
 data/newsletter-emails.txt

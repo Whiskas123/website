@@ -35,7 +35,6 @@ export default function Home() {
   const slidesMediumContraReforma = [
       {title:"Trabalho em plataformas digitais na atualidade e a Associação de Imigrantes e Trabalhadores por Aplicação", subtitle: "", author: "Marcel Borges, Hans Donner", section: "Trabalho e Imigração", id: "206", imageUrl: "/images/206.jpg"},
   {title:"Capitalismo (Racial) de Plataformas e a realidade dos estafetas em Portugal", subtitle: "", author: "João Pedro Carraça", section: "Trabalho e Imigração", id: "207", imageUrl: "/images/207.jpg"},
-  {title:"Trabalho e Imigração", subtitle: "", author: "João Leal Amado", section: "Trabalho e Imigração", id: "208", imageUrl: "/images/208.jpg"},
   {title:"Trabalho XXI - Anteprojeto de Lei da Reforma da Legislação Laboral", subtitle: "A agenda anti laboral e antissindical que é imperioso travar", author: "Maria da Paz Campos Lima", section: "Contra-reforma laboral", id: "209", imageUrl: "/images/209.jpg"},
   {title:"Trabalho XXI - Anteprojeto de Lei da Reforma da Legislação Laboral", subtitle: "Da liberdade para oprimir", author: "João Leal Amado", section: "Contra-reforma laboral", id: "210", imageUrl: "/images/210.jpg"},
   {title:"Os trabalhadores e a sociedade civil em ação pró-Palestina!", subtitle: "", author: "Leopoldo Tartaglia", section: "Internacional", id: "212", imageUrl: "/images/212.jpg"},

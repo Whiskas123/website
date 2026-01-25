@@ -7,6 +7,7 @@ import { useSidebar } from "../SidebarContext";
 import { getAllSections } from "../lib/sections";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import MagazineDropdown from "./magazineDropdown";
 
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
@@ -164,13 +165,9 @@ export default function Navbar() {
               className="horizontal-separator"
               style={{ marginRight: "20px" }}
             ></div>
-            <Link
-              style={{ color: "black" }}
-              href="/pdf/revista_compressed.pdf"
-              className="link"
-            >
-              <li>REVISTA EM PDF</li>
-            </Link>
+            <li>
+              <MagazineDropdown onLinkClick={handleSidebarClick} />
+            </li>
             <Link
               style={{ color: "black" }}
               href="/posts/32"

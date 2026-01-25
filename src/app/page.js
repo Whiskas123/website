@@ -6,6 +6,7 @@ import { useSidebar } from "./SidebarContext";
 import Newsletter from "./components/newsletter";
 import Grid from "./components/grid";
 import { getAllSections } from "./lib/sections";
+import MagazineDropdown from "./components/magazineDropdown";
 
 export default function Home() {
   const { sideBarVisible, setSideBarVisible } = useSidebar();
@@ -509,13 +510,9 @@ export default function Home() {
               className="horizontal-separator"
               style={{ marginRight: "20px" }}
             ></div>
-            <Link
-              style={{ color: "black" }}
-              href="/pdf/revista_compressed.pdf"
-              className="link"
-            >
-              <li>REVISTA EM PDF</li>
-            </Link>
+            <li>
+              <MagazineDropdown />
+            </li>
             <Link
               style={{ color: "black" }}
               href="/posts/32"

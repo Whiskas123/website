@@ -22,7 +22,7 @@ const sections = [
       },
     ],
   },
-  {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true},
+  {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true, isNew: true},
   {
     url: "contra-reforma-laboral",
     title: "Contra-reforma laboral", isTemaCentral: true },

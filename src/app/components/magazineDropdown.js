@@ -42,16 +42,17 @@ export default function MagazineDropdown({ onLinkClick }) {
       className="magazine-dropdown-container"
       onMouseEnter={() => !isMobile && setIsOpen(true)}
       onMouseLeave={() => !isMobile && setIsOpen(false)}
+      onClick={() => isMobile && setIsOpen(!isOpen)}
     >
       <span className="magazine-dropdown-wrapper">
-        <span
-          className="magazine-dropdown-trigger"
-          onClick={() => isMobile && setIsOpen(!isOpen)}
-        >
+        <span className="magazine-dropdown-trigger">
           REVISTA EM PDF
         </span>
         {isOpen && (
-          <div className="magazine-dropdown-menu">
+          <div 
+            className="magazine-dropdown-menu"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Link
               href="/pdf/revista_compressed.pdf"
               className="magazine-dropdown-item"

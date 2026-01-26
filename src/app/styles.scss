@@ -685,22 +685,7 @@ footer {
 
 // Optimize grid images
 .grids {
-  .div1,
-  .div2,
-  .div3,
-  .div4,
-  .div5,
-  .div6,
-  .div7,
-  .div8,
-  .div9,
-  .div10,
-  .div11,
-  .div12,
-  .div13,
-  .div14,
-  .div15,
-  .div16 {
+.grid-element {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -869,22 +854,7 @@ footer {
   grid-template-rows: auto; // Allow multiple rows
   grid-gap: 20px;
 
-  .div1,
-  .div2,
-  .div3,
-  .div4,
-  .div5,
-  .div6,
-  .div7,
-  .div8,
-  .div9,
-  .div10,
-  .div11,
-  .div12,
-  .div13,
-  .div14,
-  .div15,
-  .div16 {
+  .grid-element {
     height: 40vh; // Equal height for all containers
     display: flex;
     flex-direction: column;
@@ -918,22 +888,7 @@ footer {
     width: 92%;
     display: block;
 
-    .div1,
-    .div2,
-    .div3,
-    .div4,
-    .div5,
-    .div6,
-    .div7,
-    .div8,
-    .div9,
-    .div10,
-    .div11,
-    .div12,
-    .div13,
-    .div14,
-    .div15,
-    .div16 {
+    .grid-element {
       width: 100%;
       margin-bottom: 1em;
       height: auto;
@@ -1235,22 +1190,7 @@ footer {
     margin: 0 auto; // Remove margins for list items
     height: auto;
 
-    .div1,
-    .div2,
-    .div3,
-    .div4,
-    .div5,
-    .div6,
-    .div7,
-    .div8,
-    .div9,
-    .div10,
-    .div11,
-    .div12,
-    .div13,
-    .div14,
-    .div15,
-    .div16 {
+    .grid-element {
       width: 100%; // Full width for each item
       margin-bottom: 1em; // Add some space between items
       display: block;

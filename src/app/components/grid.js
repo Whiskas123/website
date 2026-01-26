@@ -9,7 +9,7 @@ export default function Grid({ gridSize = "big-grid", slides }) {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`div${index + 1}`}
+          className={`div${index + 1} grid-element`}
           onClick={() => (window.location.href = `/posts/${slide.id}`)}
         >
           {slide.imageUrl && (

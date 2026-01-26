@@ -23,13 +23,14 @@ export default function Home() {
     {title:"Greve Geral, Precariedade e Trabalho Escravo", subtitle: "", author: "Alberto Matos", section: "Trabalho e Imigração", id: "203", imageUrl: "/images/203-1.jpg"},
   {title:"Condições de trabalho e controle público: imigrantes e trabalho informal", subtitle: "", author: "João Fraga de Oliveira", section: "Trabalho e Imigração", id: "204", imageUrl: "/images/204.jpg"},
   {title:"Migrações, trabalho e (re)existências", subtitle: "", author: "Joana Guimarães, Joana S. Marques, Ana Luísa Martinho, Joana Topa", section: "Trabalho e Imigração", id: "205", imageUrl: "/images/205.jpg"},
-        {title:"Trabalho em plataformas digitais na atualidade e a Associação de Imigrantes e Trabalhadores por Aplicação", subtitle: "", author: "Marcel Borges, Hans Donner", section: "Trabalho e Imigração", id: "206", imageUrl: "/images/206.jpg"},
+       
 ];
 
 
 
 
   const slidesMediumContraReforma = [
+     {title:"Trabalho em plataformas digitais na atualidade e a Associação de Imigrantes e Trabalhadores por Aplicação", subtitle: "", author: "Marcel Borges, Hans Donner", section: "Trabalho e Imigração", id: "206", imageUrl: "/images/206.jpg"},
   {title:"Capitalismo (Racial) de Plataformas e a realidade dos estafetas em Portugal", subtitle: "", author: "João Pedro Carraça", section: "Trabalho e Imigração", id: "207", imageUrl: "/images/207.jpg"},
   {title:"Trabalho XXI - Anteprojeto de Lei da Reforma da Legislação Laboral", subtitle: "A agenda anti laboral e antissindical que é imperioso travar", author: "Maria da Paz Campos Lima", section: "Contra-reforma laboral", id: "209", imageUrl: "/images/209.jpg"},
   {title:"Trabalho XXI - Anteprojeto de Lei da Reforma da Legislação Laboral", subtitle: "Da liberdade para oprimir", author: "João Leal Amado", section: "Contra-reforma laboral", id: "210", imageUrl: "/images/210.jpg"},

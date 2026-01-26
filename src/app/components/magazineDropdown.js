@@ -49,25 +49,50 @@ export default function MagazineDropdown({ onLinkClick }) {
           REVISTA EM PDF
         </span>
         {isOpen && (
-          <div 
-            className="magazine-dropdown-menu"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Link
-              href="/pdf/revista_compressed.pdf"
-              className="magazine-dropdown-item"
-              onClick={handleLinkClick}
-            >
-              Edição 1
-            </Link>
-            <Link
-              href="/pdf/revista_2.pdf"
-              className="magazine-dropdown-item"
-              onClick={handleLinkClick}
-            >
-              Edição 2
-            </Link>
-          </div>
+          <>
+            {isMobile ? (
+              <ul className="magazine-dropdown-menu-mobile">
+                <li>
+                  <Link
+                    href="/pdf/revista_compressed.pdf"
+                    className="magazine-dropdown-item"
+                    onClick={handleLinkClick}
+                  >
+                    Edição 1
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/pdf/revista_2.pdf"
+                    className="magazine-dropdown-item"
+                    onClick={handleLinkClick}
+                  >
+                    Edição 2
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <div 
+                className="magazine-dropdown-menu"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Link
+                  href="/pdf/revista_compressed.pdf"
+                  className="magazine-dropdown-item"
+                  onClick={handleLinkClick}
+                >
+                  Edição 1
+                </Link>
+                <Link
+                  href="/pdf/revista_2.pdf"
+                  className="magazine-dropdown-item"
+                  onClick={handleLinkClick}
+                >
+                  Edição 2
+                </Link>
+              </div>
+            )}
+          </>
         )}
       </span>
     </div>

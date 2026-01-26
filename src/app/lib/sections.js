@@ -1,8 +1,9 @@
 const sections = [
+
+  {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true, isNew: true},
   {
-    url: "greve-geral",
-    title: "Greve Geral",
-    files: [
+    url: "contra-reforma-laboral",
+    title: "Contra-reforma laboral", isTemaCentral: true,     files: [
       {
         path: "/files/preaviso_cgtp.pdf",
         title: "Pré-aviso de Greve Geral da CGTP",
@@ -20,12 +21,7 @@ const sections = [
         path: "/files/resolucao_ugt.pdf",
         title: "Resolução do Secretariado Nacional da UGT",
       },
-    ],
-  },
-  {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true, isNew: true},
-  {
-    url: "contra-reforma-laboral",
-    title: "Contra-reforma laboral", isTemaCentral: true },
+    ], },
   { url: "50-aos-25-abril", title: "50 anos do 25 de Abril", isTemaCentral: true},
   { url: "salarios-ontem-hoje", title: "Salários ontem e hoje",isTemaCentral: true },
   { url: "plataformas-digitais", title: "Plataformas Digitais", isTemaCentral: true },

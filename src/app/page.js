@@ -12,6 +12,7 @@ export default function Home() {
   const { sideBarVisible, setSideBarVisible } = useSidebar();
   const sections = getAllSections();
   const slides = [
+    {title:"Trabalho e Imigração: algumas notas para interpretar e transformar o presente", subtitle: "", author: "José Soeiro", section: "Trabalho e Imigração", id: "201", imageUrl: "/images/201.jpg"},
     {
       title: "Contradições à portuguesa?", 
       subtitle: "Entre envelhecimento, escassez de trabalhadores e constrangimentos à entrada e permanência de mão-de-obra estrangeira",

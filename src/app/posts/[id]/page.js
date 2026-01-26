@@ -66,6 +66,11 @@ export default async function Post({ params }) {
           ? postData.author
           : null}
       </div>
+      {postData.authorDescription && (
+        <div className="author-description">
+          {postData.authorDescription}
+        </div>
+      )}
       <div className="post-content">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}

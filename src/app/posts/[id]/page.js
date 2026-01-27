@@ -75,6 +75,21 @@ export default async function Post({ params }) {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
+            a: ({ node, href, children }) => {
+              // Check if the link is to an audio file
+              if (href && /\.(wav|mp3|ogg|m4a)$/i.test(href)) {
+                return (
+                  <span className="audio-player">
+                    <span className="audio-label">{children}</span>
+                    <audio controls>
+                      <source src={href} type={`audio/${href.split('.').pop()}`} />
+                      O seu browser não suporta o elemento de áudio.
+                    </audio>
+                  </span>
+                );
+              }
+              return <a href={href}>{children}</a>;
+            },
             p: ({ node, children }) => {
               if (node.children[0].tagName === "img") {
                 const image = node.children[0];

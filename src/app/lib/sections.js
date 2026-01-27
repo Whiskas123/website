@@ -3,7 +3,7 @@ const sections = [
   {url: "trabalho-e-imigracao", title: "Trabalho e Imigração", isTemaCentral: true, isNew: true},
   {
     url: "contra-reforma-laboral",
-    title: "Contra-reforma laboral", isTemaCentral: true,     files: [
+    title: "Contra-reforma laboral",      files: [
       {
         path: "/files/preaviso_cgtp.pdf",
         title: "Pré-aviso de Greve Geral da CGTP",

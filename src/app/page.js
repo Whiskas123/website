@@ -135,7 +135,7 @@ export default function Home() {
         "A transição tecnológica na indústria automóvel e a posição dos trabalhadores",
       subtitle: "",
       author: "António Brandão Moniz",
-      section: "Automóvel",
+      section: "Recensões",
       id: "213",
       imageUrl: "/images/213.jpg",
     },

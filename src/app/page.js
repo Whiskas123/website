@@ -39,14 +39,6 @@ export default function Home() {
     },
 
     {
-      title: "Greve Geral, Precariedade e Trabalho Escravo",
-      subtitle: "",
-      author: "Alberto Matos",
-      section: "Trabalho e Imigração",
-      id: "203",
-      imageUrl: "/images/203-1.jpg",
-    },
-    {
       title: "Trabalho XXI: Da liberdade para oprimir",
       subtitle: "",
       author: "João Leal Amado",
@@ -66,6 +58,14 @@ export default function Home() {
   ];
 
   const slidesMediumContraReforma = [
+    {
+      title: "Greve Geral, Precariedade e Trabalho Escravo",
+      subtitle: "",
+      author: "Alberto Matos",
+      section: "Trabalho e Imigração",
+      id: "203",
+      imageUrl: "/images/203-1.jpg",
+    },
     {
       title: "Migrações, trabalho e (re)existências",
       subtitle: "",

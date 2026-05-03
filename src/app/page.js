@@ -21,6 +21,21 @@ export default function Home() {
       imageUrl: "/images/200.jpg",
     },
     {
+title: 'O algoritmo contra a lei?',
+subtitle: 'Um alerta vindo de Espanha e o pacote laboral português',
+      author: "José Soeiro",
+      section: "Contra-reforma laboral",
+      id: "223",
+      imageUrl: "/images/223.jpg",
+    },
+    {      title: "Trabalhar Abril",
+      subtitle: "",
+      author: "Joana Neto",
+      section: "",
+      id: "224",
+      imageUrl: "/images/224.jpg",},
+
+    {
       title: "O Anteprojeto XXI, a contratação coletiva e a Constituição",
       subtitle: "",
       author: "João Carlos Simões Reis",
@@ -38,7 +53,11 @@ export default function Home() {
       imageUrl: "/images/209.jpg",
     },
 
-    {
+
+  ];
+
+  const slidesMediumContraReforma = [
+        {
       title: "Trabalho XXI: Da liberdade para oprimir",
       subtitle: "",
       author: "João Leal Amado",
@@ -55,9 +74,6 @@ export default function Home() {
       id: "222",
       imageUrl: "/images/222.jpg",
     },
-  ];
-
-  const slidesMediumContraReforma = [
     {
       title: "Greve Geral, Precariedade e Trabalho Escravo",
       subtitle: "",

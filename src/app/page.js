@@ -12,6 +12,14 @@ export default function Home() {
   const { sideBarVisible, setSideBarVisible } = useSidebar();
   const sections = getAllSections();
   const slides = [
+        {
+      title: "Não há acordo na Concertação Social sobre o pacote laboral: e agora?",
+      subtitle: "",
+      author: "Henrique Sousa",
+      section: "Contra-reforma laboral",
+      id: "226",
+      imageUrl: "/images/226.jpg",
+    },    
     {
       title: "Já está disponível o segundo número da revista",
       subtitle: "",
@@ -19,6 +27,14 @@ export default function Home() {
       section: "",
       id: "200",
       imageUrl: "/images/200.jpg",
+    },
+    {
+      title: "Pacote laboral: o trabalho da política e a política do trabalho",
+      subtitle: "",
+      author: "João Fraga de Oliveira",
+      section: "Contra-reforma laboral",
+      id: "225",
+      imageUrl: "/images/225.jpg",
     },
     {
 title: 'O algoritmo contra a lei?',
@@ -35,7 +51,14 @@ subtitle: 'Um alerta vindo de Espanha e o pacote laboral português',
       id: "224",
       imageUrl: "/images/224.jpg",},
 
-    {
+
+
+
+  ];
+
+  const slidesMediumContraReforma = [
+
+        {
       title: "O Anteprojeto XXI, a contratação coletiva e a Constituição",
       subtitle: "",
       author: "João Carlos Simões Reis",
@@ -52,11 +75,6 @@ subtitle: 'Um alerta vindo de Espanha e o pacote laboral português',
       id: "209",
       imageUrl: "/images/209.jpg",
     },
-
-
-  ];
-
-  const slidesMediumContraReforma = [
         {
       title: "Trabalho XXI: Da liberdade para oprimir",
       subtitle: "",

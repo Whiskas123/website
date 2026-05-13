@@ -62,7 +62,7 @@ for (const file of imageFiles) {
 
   // Build ImageMagick command
   const qualityFlag = isJpeg ? `-quality ${quality}` : `-quality ${quality}`;
-  const cmd = `magick "${filePath}" -resize ${maxWidth}x${maxWidth}\\> -strip ${qualityFlag} "${filePath}"`;
+  const cmd = `magick "${filePath}" -auto-orient -resize ${maxWidth}x${maxWidth}\\> -strip ${qualityFlag} "${filePath}"`;
 
   if (dryRun) {
     console.log(`Would optimize: ${file} (${sizeMB} MB)`);

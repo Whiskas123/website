@@ -13,13 +13,14 @@ export default function Home() {
   const sections = getAllSections();
   const slides = [
         {
-      title: "Não há acordo na Concertação Social sobre o pacote laboral: e agora?",
+      title: "Pacote laboral: o trabalho da política e a política do trabalho",
       subtitle: "",
-      author: "Henrique Sousa",
+      author: "João Fraga de Oliveira",
       section: "Contra-reforma laboral",
-      id: "226",
-      imageUrl: "/images/226.jpg",
-    },    
+      id: "225",
+      imageUrl: "/images/225.jpg",
+    },
+  
     {
       title: "Já está disponível o segundo número da revista",
       subtitle: "",
@@ -28,14 +29,14 @@ export default function Home() {
       id: "200",
       imageUrl: "/images/200.jpg",
     },
-    {
-      title: "Pacote laboral: o trabalho da política e a política do trabalho",
+        {
+      title: "Não há acordo na Concertação Social sobre o pacote laboral: e agora?",
       subtitle: "",
-      author: "João Fraga de Oliveira",
+      author: "Henrique Sousa",
       section: "Contra-reforma laboral",
-      id: "225",
-      imageUrl: "/images/225.jpg",
-    },
+      id: "226",
+      imageUrl: "/images/226.jpg",
+    },  
     {
 title: 'O algoritmo contra a lei?',
 subtitle: 'Um alerta vindo de Espanha e o pacote laboral português',

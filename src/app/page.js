@@ -36,7 +36,6 @@ const otherSlideConfigs = [
   { id: "218" },
   { id: "219" },
   { id: "220", imageUrl: "/images/220-0.jpg" },
-  { id: "221" }
 ];
 
 export default function Home() {

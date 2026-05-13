@@ -31,6 +31,16 @@ export async function generateStaticParams() {
   return paths.map((path) => ({ url: path.params.id }));
 }
 
+function formatDatePT(dateString) {
+  if (!dateString) return null;
+  const months = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
+  ];
+  const date = new Date(dateString);
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
+}
+
 export default async function Post({ params }) {
   const resolvedParams = await params;
   const postData = getPostData(resolvedParams.id);
@@ -38,18 +48,23 @@ export default async function Post({ params }) {
   return (
     <div className="post-container">
       <div className="sections">
-        {postData.section && Array.isArray(postData.section) ? (
-          postData.section.map((name, index) => (
-            <span className="section" key={index}>
-              {name.toUpperCase()}
-              {index < postData.section.length - 1 && " | "}
-            </span>
-          ))
-        ) : postData.section ? (
-          <Link href={`/seccao/${getUrlByTitle(postData.section)}`}>
-            <span className="section">{postData.section.toUpperCase()}</span>
-          </Link>
-        ) : null}
+        <span>
+          {postData.section && Array.isArray(postData.section) ? (
+            postData.section.map((name, index) => (
+              <span className="section" key={index}>
+                {name.toUpperCase()}
+                {index < postData.section.length - 1 && " | "}
+              </span>
+            ))
+          ) : postData.section ? (
+            <Link href={`/seccao/${getUrlByTitle(postData.section)}`}>
+              <span className="section">{postData.section.toUpperCase()}</span>
+            </Link>
+          ) : null}
+        </span>
+        {postData.date && (
+          <span className="post-date">{formatDatePT(postData.date)}</span>
+        )}
       </div>
       <h1 className="post-title">{postData.title}</h1>
       {postData.subtitle ? <h2>{postData.subtitle}</h2> : null}

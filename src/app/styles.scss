@@ -407,6 +407,15 @@ footer {
   .sections {
     color: $color-darker-salmon;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .post-date {
+      color: $color-darker-salmon;
+      font-weight: normal;
+      font-size: 0.9em;
+    }
 
     a {
       color: inherit; // Reset color styles for all links

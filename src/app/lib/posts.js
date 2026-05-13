@@ -4,6 +4,16 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "src/app/posts");
 
+export function formatDatePT(dateString) {
+  if (!dateString) return null;
+  const months = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
+  ];
+  const date = new Date(dateString);
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
+}
+
 export function getSortedPostsData(includeContent = false) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);

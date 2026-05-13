@@ -372,6 +372,12 @@ footer {
     color: $color-darker-salmon;
   }
 
+  .post-date {
+    color: $color-darker-salmon;
+    font-size: 0.85em;
+    margin-bottom: 0.2em;
+  }
+
   .post-title {
     text-transform: uppercase;
   }
@@ -407,15 +413,6 @@ footer {
   .sections {
     color: $color-darker-salmon;
     font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .post-date {
-      color: $color-darker-salmon;
-      font-weight: normal;
-      font-size: 0.9em;
-    }
 
     a {
       color: inherit; // Reset color styles for all links
@@ -504,6 +501,12 @@ footer {
   li {
     margin: 1em 0;
     padding: 1em 0em;
+
+    .post-date {
+      color: $color-darker-salmon;
+      font-size: 0.85em;
+      margin-bottom: 0.2em;
+    }
 
     a {
       color: $color-black;

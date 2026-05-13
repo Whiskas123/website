@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllSections } from "../../lib/sections";
-import { getSortedPostsData } from "../../lib/posts";
+import { getSortedPostsData, formatDatePT } from "../../lib/posts";
 
 export default async function Seccao({ params }) {
   const resolvedParams = await params;
@@ -32,6 +32,9 @@ export default async function Seccao({ params }) {
       <ul>
         {filteredPostsData.map((post) => (
           <li key={post.id}>
+            {post.date && (
+              <div className="post-date">{formatDatePT(post.date)}</div>
+            )}
             <a className="section-post-title" href={`/posts/${post.id}`}>
               {post.title}
             </a>

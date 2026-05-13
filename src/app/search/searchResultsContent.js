@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { formatDatePT } from "@/app/lib/posts";
 
 export async function generateMetadata({ searchParams }) {
   const query = searchParams.q || "";
@@ -98,6 +99,9 @@ export default function SearchResultsContent() {
         <ul>
           {searchResults.map((post) => (
             <li key={post.id}>
+              {post.date && (
+                <div className="post-date">{formatDatePT(post.date)}</div>
+              )}
               <a className="section-post-title" href={`/posts/${post.id}`}>
                 {post.title}
               </a>

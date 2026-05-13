@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { formatDatePT } from "@/app/lib/posts";
+import { formatDatePT } from "@/app/lib/formatDate";
 
 export async function generateMetadata({ searchParams }) {
   const query = searchParams.q || "";

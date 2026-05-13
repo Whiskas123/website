@@ -1,18 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+export { formatDatePT } from "./formatDate";
 
 const postsDirectory = path.join(process.cwd(), "src/app/posts");
-
-export function formatDatePT(dateString) {
-  if (!dateString) return null;
-  const months = [
-    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
-  ];
-  const date = new Date(dateString);
-  return `${months[date.getMonth()]} ${date.getFullYear()}`;
-}
 
 export function getSortedPostsData(includeContent = false) {
   // Get file names under /posts
@@ -76,4 +67,39 @@ export function getPostData(id) {
     ...matterResult.data,
     content: matterResult.content,
   };
+}
+
+/**
+ * Resolves an array of slide configs by enriching them with post metadata.
+ * Only `id` is required in each config. Any other fields provided will
+ * override the post metadata. If no imageUrl is provided, defaults to
+ * `/images/{id}.jpg`.
+ *
+ * NOTE: This function uses `fs` and can only be called from server components
+ * or server-side code (getStaticProps, API routes, etc.)
+ */
+export function resolveSlides(slideConfigs) {
+  return slideConfigs.map((config) => {
+    const { id, ...overrides } = config;
+    const fullPath = path.join(postsDirectory, `${id}.md`);
+
+    let postData = {};
+    try {
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const matterResult = matter(fileContents);
+      postData = matterResult.data;
+    } catch (e) {
+      // If post file doesn't exist, just use the overrides
+    }
+
+    return {
+      id,
+      title: postData.title || "",
+      subtitle: postData.subtitle || "",
+      author: postData.author || "",
+      section: postData.section || "",
+      imageUrl: `/images/${id}.jpg`,
+      ...overrides,
+    };
+  });
 }

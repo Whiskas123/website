@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getAllSections } from "../../lib/sections";
-import { getSortedPostsData, formatDatePT } from "../../lib/posts";
+import { getSortedPostsData } from "../../lib/posts";
+import { formatDatePT } from "../../lib/formatDate";
 
 export default async function Seccao({ params }) {
   const resolvedParams = await params;

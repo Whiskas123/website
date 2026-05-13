@@ -1,18 +1,19 @@
 "use client";
-import { useEffect } from "react";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSidebar } from "../SidebarContext";
 
-import Newsletter from "./newsletter";
 import Grid from "./grid";
 import MagazineDropdown from "./magazineDropdown";
 
+// Lazy-load below-the-fold content
+const Newsletter = dynamic(() => import("./newsletter"), {
+  loading: () => <div style={{ height: "200px" }} />,
+});
+
 export default function HomeClient({ sections, slides, otherSlides, imageCount = 12 }) {
   const { sideBarVisible } = useSidebar();
-
-  useEffect(() => {
-    console.log("sideBarVisible:", sideBarVisible);
-  }, [sideBarVisible]);
 
   // Separate sections into categories
   const temasCentrais = sections.filter((section) => section.isTemaCentral);
@@ -84,21 +85,21 @@ export default function HomeClient({ sections, slides, otherSlides, imageCount =
           </ul>
         </div>
         <div className="main-column">
-          {slides && <Grid gridSize="big-grid" slides={slides}></Grid>}
+          {slides && <Grid gridSize="big-grid" slides={slides} />}
         </div>
       </div>
-      <Newsletter></Newsletter>
+      <Newsletter />
       {otherSlides && otherSlides.length > 0 && (
         <>
           <Grid
             gridSize="medium-grid"
             slides={otherSlides.slice(0, imageCount)}
-          ></Grid>
+          />
           {otherSlides.length > imageCount && (
             <Grid
               gridSize="small-grid"
               slides={otherSlides.slice(imageCount).map(({ imageUrl, ...rest }) => rest)}
-            ></Grid>
+            />
           )}
         </>
       )}

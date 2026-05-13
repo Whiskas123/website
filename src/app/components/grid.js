@@ -1,16 +1,18 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import OptimizedImage from "./OptimizedImage";
 
 export default function Grid({ gridSize = "big-grid", slides }) {
   return (
     <div className={`grids ${gridSize}`}>
       {slides.map((slide, index) => (
-        <div
+        <Link
           key={index}
+          href={`/posts/${slide.id}`}
           className={`div${index + 1} grid-element`}
-          onClick={() => (window.location.href = `/posts/${slide.id}`)}
+          style={{ textDecoration: "none", color: "inherit" }}
         >
           {slide.imageUrl && (
             <OptimizedImage
@@ -25,9 +27,13 @@ export default function Grid({ gridSize = "big-grid", slides }) {
                 objectPosition: "center",
                 marginBottom: "10px",
               }}
-              loading={index < 4 ? "eager" : "lazy"}
-              priority={index < 2}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading={index < 3 ? "eager" : "lazy"}
+              priority={index < 2 && gridSize === "big-grid"}
+              sizes={
+                gridSize === "big-grid"
+                  ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                  : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              }
               fallbackSrc={slide.imageUrl}
               credit={slide.credit}
             />
@@ -35,21 +41,17 @@ export default function Grid({ gridSize = "big-grid", slides }) {
           <div className="article-info">
             <div className="article-sections">
               <span className="article-section">
-                {" "}
                 {slide.section && (
                   <div className="article-section">{slide.section}</div>
                 )}
               </span>
             </div>
             <div className="article-title">{slide.title}</div>
-            {/*slide.subtitle && (
-              <div className="article-subtitle">{slide.subtitle}</div>
-            )*/}
             {slide.author && (
               <div className="article-author">{slide.author}</div>
             )}
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

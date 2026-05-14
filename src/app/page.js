@@ -7,15 +7,17 @@ const IMAGE_COUNT = 12;
 
 // Big highlight slides (shown at the top)
 const bigSlideConfigs = [
+    { id: "227" },
   { id: "225" },
   { id: "200" },
   { id: "226" },
   { id: "223" },
-  { id: "224" },
+
 ];
 
 // All other slides (fused into a single list)
 const otherSlideConfigs = [
+    { id: "224" },
   { id: "211" },
   { id: "209" },
   { id: "210" },
@@ -35,7 +37,7 @@ const otherSlideConfigs = [
   { id: "217" },
   { id: "218" },
   { id: "219" },
-  { id: "220", imageUrl: "/images/220-0.jpg" },
+ 
 ];
 
 export default function Home() {

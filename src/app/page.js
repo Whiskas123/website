@@ -7,9 +7,9 @@ const IMAGE_COUNT = 12;
 
 // Big highlight slides (shown at the top)
 const bigSlideConfigs = [
+  { id: "230" },
   { id: "228" },
   { id: "229" },
-    { id: "227" },
   { id: "225" },
   { id: "200" },
 
@@ -18,6 +18,7 @@ const bigSlideConfigs = [
 
 // All other slides (fused into a single list)
 const otherSlideConfigs = [
+  { id: "227" },
     { id: "226" },
   { id: "223" },
     { id: "224" },

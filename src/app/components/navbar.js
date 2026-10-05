@@ -4,40 +4,18 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Hamburger from "hamburger-react";
 import { useSidebar } from "../SidebarContext";
-import { getAllSections } from "../lib/sections";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-import MagazineDropdown from "./magazineDropdown";
+import SidebarMenu from "./sidebarMenu";
 
 export default function Navbar() {
   const [searchVisible, setSearchVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
 
   const { sideBarVisible, setSideBarVisible } = useSidebar();
-  const sections = getAllSections();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const router = useRouter();
-
-  // Separate sections into categories
-  const temasCentrais = sections.filter((section) => section.isTemaCentral);
-  const otherSections = sections.filter((section) => !section.isTemaCentral);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   function handleSearch() {
     if (!searchTerm.trim()) return; // Don't search if term is empty
@@ -63,11 +41,41 @@ export default function Navbar() {
     setSideBarVisible(false);
   };
 
+  const handleSearchButton = () => {
+    if (!searchVisible) {
+      toggleSearch(); // Open input if closed
+    } else if (searchTerm.trim()) {
+      handleSearch(); // Handle search if input has terms
+    } else {
+      toggleSearch(); // Close input if open and empty
+    }
+  };
+
+  const searchInput = (
+    <input
+      type="text"
+      placeholder="Pesquisar..."
+      aria-label="Pesquisar"
+      value={searchTerm}
+      className={searchVisible ? "visible" : ""}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+    />
+  );
+
+  const searchIcon = (
+    <Image src="/magnifying-glass.svg" alt="" width={20} height={20} />
+  );
+
   return (
     <>
       <div className="navbar">
         <div className={`navbar-left ${isHomePage ? "desktop-hide" : ""}`}>
-          <Hamburger toggled={sideBarVisible} toggle={setSideBarVisible} />
+          <Hamburger
+            toggled={sideBarVisible}
+            toggle={setSideBarVisible}
+            label="Menu"
+          />
         </div>
         <div className="navbar-center">
           <Link
@@ -79,43 +87,38 @@ export default function Navbar() {
             }}
           >
             <Image
-              className={`logo-img ${!isMobile ? "homepage-logo" : ""}`}
-              src={!isMobile ? "/logo_horizontal.svg" : "/logo.svg"}
-              alt="Logo"
-              width={!isMobile ? 1226.91 : 198}
-              height={!isMobile ? 198.43 : 165}
+              className="logo-img homepage-logo"
+              src="/logo_horizontal.svg"
+              alt="Que Força É Essa?"
+              width={1226.91}
+              height={198.43}
+            />
+            <Image
+              className="logo-img logo-mobile"
+              src="/logo.svg"
+              alt="Que Força É Essa?"
+              width={198}
+              height={165}
             />
           </Link>
-          {isMobile ? "" : "REVISTA SOBRE OS MUNDOS DO TRABALHO"}
+          <span className="navbar-tagline">
+            REVISTA SOBRE OS MUNDOS DO TRABALHO
+          </span>
         </div>
         <div className="navbar-right">
           <div className="search">
-            <input
-              type="text"
-              placeholder="Pesquisar..."
-              value={searchTerm}
-              className={searchVisible ? "visible" : ""}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-            />
-
-            <Image
-              src="/magnifying-glass.svg"
-              alt="Search"
-              width={20}
-              height={20}
+            {searchInput}
+            <button
+              type="button"
+              className="search-button"
+              aria-label="Pesquisar"
               onClick={() => {
-                if (!searchVisible) {
-                  toggleSearch(); // Open input if closed
-                } else if (searchTerm.trim()) {
-                  handleSearch(); // Handle search if input has terms
-                } else {
-                  toggleSearch(); // Close input if open and empty
-                }
+                handleSearchButton();
                 handleSidebarClick();
               }}
-              style={{ cursor: "pointer" }}
-            />
+            >
+              {searchIcon}
+            </button>
           </div>
         </div>
       </div>
@@ -129,89 +132,19 @@ export default function Navbar() {
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <ul>
-            <li className="temas-centrais">
-              <div>Temas Centrais</div>
-              <ul>
-                {temasCentrais.map((section, index) => (
-                  <Link
-                    key={`tc-${index}`}
-                    href={`/seccao/${section.url}`}
-                    className="no-decoration"
-                    onClick={handleSidebarClick}
-                  >
-                    <li>
-                      {section.title}
-                      {section.isNew && <span className="novo-indicator">Novo!</span>}
-                    </li>
-                  </Link>
-                ))}
-              </ul>
-            </li>
-            {otherSections.map((section, index) => (
-              <Link
-                key={`other-${index}`}
-                href={`/seccao/${section.url}`}
-                className="no-decoration"
-                onClick={handleSidebarClick}
-              >
-                <li>
-                  {section.title}
-                  {section.isNew && <span className="novo-indicator">Novo!</span>}
-                </li>
-              </Link>
-            ))}
-            <div
-              className="horizontal-separator"
-              style={{ marginRight: "20px" }}
-            ></div>
-            <li>
-              <MagazineDropdown onLinkClick={handleSidebarClick} />
-            </li>
-            <Link
-              style={{ color: "black" }}
-              href="/posts/32"
-              className="mobile-sobre-nos"
-              onClick={handleSidebarClick}
-            >
-              <li>REVISTA EM FORMATO FÍSICO</li>
-            </Link>
-            <Link
-              style={{ color: "black" }}
-              href="/posts/31"
-              className="mobile-sobre-nos"
-              onClick={handleSidebarClick}
-            >
-              <li>SOBRE NÓS</li>
-            </Link>
-          </ul>
+          <SidebarMenu onNavigate={handleSidebarClick} />
 
           <div className="mobile-sidebar-bottom">
             <div className="mobile-search">
-              <input
-                type="text"
-                placeholder="Pesquisar..."
-                value={searchTerm}
-                className={searchVisible ? "visible" : ""}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-              />
-              <Image
-                src="/magnifying-glass.svg"
-                alt="Search"
-                width={20}
-                height={20}
-                onClick={() => {
-                  if (!searchVisible) {
-                    toggleSearch(); // Open input if closed
-                  } else if (searchTerm.trim()) {
-                    handleSearch(); // Handle search if input has terms
-                  } else {
-                    toggleSearch(); // Close input if open and empty
-                  }
-                }}
-                style={{ cursor: "pointer" }}
-              />
+              {searchInput}
+              <button
+                type="button"
+                className="search-button"
+                aria-label="Pesquisar"
+                onClick={handleSearchButton}
+              >
+                {searchIcon}
+              </button>
             </div>
           </div>
         </div>

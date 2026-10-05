@@ -1,7 +1,17 @@
 import { notFound } from "next/navigation";
 import { getAllSections } from "../../lib/sections";
-import { getSortedPostsData } from "../../lib/posts";
+import { getSortedPostsData, isArticle } from "../../lib/posts";
 import { formatDatePT } from "../../lib/formatDate";
+
+export function generateStaticParams() {
+  return getAllSections().map((section) => ({ seccao: section.url }));
+}
+
+export async function generateMetadata({ params }) {
+  const { seccao } = await params;
+  const section = getAllSections().find((section) => section.url === seccao);
+  return section ? { title: `${section.title} - Que Força é Essa` } : {};
+}
 
 export default async function Seccao({ params }) {
   const resolvedParams = await params;
@@ -24,7 +34,7 @@ export default async function Seccao({ params }) {
   const allPostsData = getSortedPostsData();
   const filteredPostsData =
     resolvedParams.seccao === "todos-os-textos"
-      ? allPostsData.sort((a, b) => a.id - b.id) // Sort by id in ascending order
+      ? allPostsData.filter(isArticle) // Already sorted newest first
       : allPostsData.filter((post) => post.section === pageTitle);
 
   return (

@@ -48,7 +48,9 @@ export default function Grid({ gridSize = "big-grid", slides }) {
             </div>
             <div className="article-title">{slide.title}</div>
             {slide.author && (
-              <div className="article-author">{slide.author}</div>
+              <div className="article-author">
+                {[].concat(slide.author).join(", ")}
+              </div>
             )}
           </div>
         </Link>

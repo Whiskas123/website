@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Que Força É Essa — website
 
-## Getting Started
+Site da revista sobre os mundos do trabalho. Next.js (App Router), artigos em Markdown, alojado na Vercel.
 
-First, run the development server:
+## Correr localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre em [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Publicar um artigo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Criar `src/app/posts/<id>.md` (o id é o número seguinte) com o cabeçalho:
 
-## Learn More
+   ```md
+   ---
+   title: 'Título'
+   subtitle: 'Subtítulo (também usado como descrição nas partilhas)'
+   date: '2026-09-30'
+   author: "Nome"            # ou uma lista: ["Nome A", "Nome B"]
+   authorDescription: "Opcional"
+   section: 'Internacional'  # título exato de uma secção em src/app/lib/sections.js
+   ---
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Pôr a imagem de capa em `public/images/<id>.jpg` (JPEG, ~1600px de largura no máximo; `bun run optimize-images` reduz as maiores). A primeira imagem do texto é a usada nas partilhas em redes sociais.
+3. Acrescentar o id a `bigSlideConfigs` ou `otherSlideConfigs` em `src/app/page.js` para aparecer na página inicial.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No texto, `![legenda](/images/ficheiro.jpg)` mostra a imagem com legenda e um link para um ficheiro `.mp3` é mostrado como leitor de áudio.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Onde está o quê
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/lib/sections.js` — secções do menu (e PDFs associados a uma secção).
+- `src/app/lib/site.js` — endereço e descrição do site (usados no sitemap, RSS e partilhas).
+- `public/pdf/` — edições da revista em PDF, ligadas em `src/app/components/magazineDropdown.js`.

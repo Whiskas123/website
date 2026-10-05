@@ -5,6 +5,13 @@ export { formatDatePT } from "./formatDate";
 
 const postsDirectory = path.join(process.cwd(), "src/app/posts");
 
+// Sections used by standalone pages (Sobre Nós, Adquirir Revista) rather than articles
+const PAGE_SECTIONS = ["Sobre Nós", "Adquirir Revista"];
+
+export function isArticle(post) {
+  return !PAGE_SECTIONS.includes(post.section);
+}
+
 export function getSortedPostsData(includeContent = false) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
@@ -32,13 +39,11 @@ export function getSortedPostsData(includeContent = false) {
         throw new Error(`Error parsing file ${fileName}: ${error.message}`);
       }
     });
-  // Sort posts by date
+  // Sort posts by date, newest first (ties broken by id, newest first)
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
+    if (a.date < b.date) return 1;
+    if (a.date > b.date) return -1;
+    return b.id - a.id;
   });
 }
 
@@ -56,8 +61,11 @@ export function getAllPostIds() {
     });
 }
 
+// Returns null when the id is malformed or the post doesn't exist
 export function getPostData(id) {
+  if (!/^[\w-]+$/.test(id)) return null;
   const fullPath = path.join(postsDirectory, `${id}.md`);
+  if (!fs.existsSync(fullPath)) return null;
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);

@@ -1,4 +1,3 @@
-import { getAllSections } from "./lib/sections";
 import { resolveSlides } from "./lib/posts";
 import HomeClient from "./components/HomeClient";
 
@@ -45,13 +44,11 @@ const otherSlideConfigs = [
 ];
 
 export default function Home() {
-  const sections = getAllSections();
   const slides = resolveSlides(bigSlideConfigs);
   const otherSlides = resolveSlides(otherSlideConfigs);
 
   return (
     <HomeClient
-      sections={sections}
       slides={slides}
       otherSlides={otherSlides}
       imageCount={IMAGE_COUNT}

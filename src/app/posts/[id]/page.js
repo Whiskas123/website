@@ -4,6 +4,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import { SITE_DESCRIPTION } from "@/app/lib/site";
 
 function getFirstImageUrl(content) {
   const imageRegex = /!\[.*?\]\((.*?)\)/;
@@ -12,28 +14,36 @@ function getFirstImageUrl(content) {
 }
 
 export async function generateMetadata({ params }) {
-  const postData = getPostData(params.id);
+  const { id } = await params;
+  const postData = getPostData(id);
+  if (!postData) return {};
   const firstImageUrl = getFirstImageUrl(postData.content);
+  const title = `${postData.title} - Que Força é Essa`;
+  const description = postData.subtitle || SITE_DESCRIPTION;
 
   return {
-    title: `${postData.title} - Que Força é Essa`,
-    description: "Revista sobre os Mundos do Trabalho",
-    openGraph: firstImageUrl
-      ? {
-          images: [firstImageUrl],
-        }
-      : undefined,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: [firstImageUrl || "/og.png"],
+    },
   };
 }
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
-  return paths.map((path) => ({ url: path.params.id }));
+  return paths.map((path) => ({ id: path.params.id }));
 }
 
 export default async function Post({ params }) {
   const resolvedParams = await params;
   const postData = getPostData(resolvedParams.id);
+  if (!postData) notFound();
+  const sectionUrl =
+    typeof postData.section === "string" && getUrlByTitle(postData.section);
 
   return (
     <div className="post-container">
@@ -48,10 +58,12 @@ export default async function Post({ params }) {
               {index < postData.section.length - 1 && " | "}
             </span>
           ))
-        ) : postData.section ? (
-          <Link href={`/seccao/${getUrlByTitle(postData.section)}`}>
+        ) : sectionUrl ? (
+          <Link href={`/seccao/${sectionUrl}`}>
             <span className="section">{postData.section.toUpperCase()}</span>
           </Link>
+        ) : postData.section ? (
+          <span className="section">{postData.section.toUpperCase()}</span>
         ) : null}
       </div>
       <h1 className="post-title">{postData.title}</h1>
@@ -84,8 +96,7 @@ export default async function Post({ params }) {
                 return (
                   <span className="audio-player">
                     <span className="audio-label">{children}</span>
-                    <audio controls>
-                      <source src={href} type={`audio/${href.split('.').pop()}`} />
+                    <audio controls src={href}>
                       O seu browser não suporta o elemento de áudio.
                     </audio>
                   </span>
